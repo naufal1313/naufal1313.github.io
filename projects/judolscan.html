@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JudolScan - Hybrid AI YouTube Comment Detection | Rizky Noufal Hidayat</title>
+  <meta name="description" content="Technical Case Study untuk JudolScan: Aplikasi web pendeteksi komentar promosi judi online pada YouTube menggunakan pendekatan Hybrid AI (Bi-LSTM, Rule-Based, dan LIME).">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+
+  <!-- ======================================================================
+       1. NAVBAR
+       ====================================================================== -->
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-avatar-link" aria-label="Rizky Noufal Hidayat">
+        <img src="../assets/images/profile.jpg" alt="Rizky Noufal Hidayat" class="brand-avatar-img">
+        <div class="brand-avatar-text">
+          <span class="brand-avatar-name">Rizky Noufal Hidayat</span>
+          <span class="brand-avatar-role">Junior Backend Developer</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../about.html" class="nav-link">About</a>
+        <a href="../projects.html" class="nav-link active">Projects</a>
+        <a href="../experience.html" class="nav-link">Experience</a>
+        <a href="../contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="../cv/Rizky-Noufal-Hidayat-CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="min-height: 36px; padding: 0.35rem 0.875rem; font-size: 0.75rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download CV</span>
+        </a>
+        <a href="../about.html" class="avatar-btn" aria-label="About Profile">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+      </div>
+
+      <button type="button" class="nav-toggle-btn" id="nav-toggle-btn" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <nav class="mobile-links">
+        <a href="../index.html" class="mobile-link">Home</a>
+        <a href="../about.html" class="mobile-link">About</a>
+        <a href="../projects.html" class="mobile-link active">Projects</a>
+        <a href="../experience.html" class="mobile-link">Experience</a>
+        <a href="../contact.html" class="mobile-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       2. HERO HEADER SECTION (Harmonized with Home Design)
+       ====================================================================== -->
+  <section class="py-section border-b-subtle hero-mesh-wrapper">
+    <div class="ambient-glow glow-teal" aria-hidden="true"></div>
+    <div class="ambient-glow glow-indigo" aria-hidden="true"></div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <!-- Breadcrumb / Back Link -->
+      <div style="margin-bottom: 1.25rem;">
+        <a href="../index.html#projects" class="btn-link" style="font-size: 0.8125rem; font-family: var(--font-mono);">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          <span>Back to Home</span>
+        </a>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+        <span class="badge-pill badge-academic">Undergraduate Thesis Project</span>
+        <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-light);">
+          Maret 2024 - Juli 2024
+        </span>
+      </div>
+
+      <h1 style="font-size: 2.25rem; font-weight: 900; color: #0f172a; line-height: 1.2; letter-spacing: -0.025em; max-width: 950px;">
+        JudolScan: Deteksi Komentar Promosi Judi Online pada YouTube
+      </h1>
+      <p style="font-size: 1.25rem; font-weight: 700; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+        Universitas Pakuan - Skripsi S-1 Ilmu Komputer
+      </p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; font-size: 0.8125rem; font-family: var(--font-mono); color: var(--text-muted);">
+        <div style="background: rgba(255,255,255,0.85); padding: 0.4rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light); box-shadow: var(--shadow-2xs);">
+          Kategori: <strong style="color: #0f172a;">AI &amp; NLP</strong>
+        </div>
+        <div style="background: rgba(255,255,255,0.85); padding: 0.4rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light); box-shadow: var(--shadow-2xs);">
+          Peran: <strong style="color: #0f172a;">AI Engineer &amp; Full Stack Developer</strong>
+        </div>
+        <div style="background: rgba(255,255,255,0.85); padding: 0.4rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light); box-shadow: var(--shadow-2xs);">
+          Fokus: <strong style="color: #0f172a;">Deep Learning, Explainable AI &amp; Web Systems</strong>
+        </div>
+      </div>
+
+      <p style="margin-top: 1.25rem; color: var(--text-muted); line-height: 1.7; font-size: 1rem; max-width: 880px;">
+        JudolScan merupakan sistem berbasis web yang dirancang untuk membantu kreator konten YouTube atau pengelola channel mengidentifikasi komentar yang berpotensi mengandung promosi judi online berbahasa Indonesia secara otomatis, cerdas, dan transparan melalui integrasi model sequence Bi-LSTM, penguat aturan berbasis kamus (Rule-Based Booster), serta interpretabilitas LIME XAI.
+      </p>
+
+      <!-- Purpose & Disclaimer Banner -->
+      <div class="confidentiality-notice" style="margin-top: 1.75rem; border-radius: var(--radius-md); border: 1px solid #bfdbfe; background: #eff6ff; padding: 1.25rem; max-width: 960px;">
+        <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <div>
+            <h2 style="font-size: 0.875rem; font-weight: 700; color: #1e40af; margin-bottom: 0.25rem;">
+              Prinsip Kerja &amp; Batasan Sistem (Assistance Tool Disclaimer)
+            </h2>
+            <p style="font-size: 0.8125rem; color: #1e3a8a; line-height: 1.6;">
+              JudolScan berfungsi secara khusus sebagai <strong>alat bantu deteksi cerdas</strong> untuk memfilter dan memprioritaskan peninjauan komentar berisiko, bukan sebagai penentu mutlak bahwa suatu komentar pasti merupakan promosi judi online. Keputusan moderasi akhir tetap berada di tangan pengelola channel atau kreator konten. Seluruh data komentar yang ditampilkan telah disanitasi dan dianonimkan untuk melindungi privasi pengguna platform.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       3. PRODUCTION APPLICATION INTERFACE GALLERY
+       ====================================================================== -->
+  <section class="py-section border-b-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">VERIFIED INTERFACE</span>
+        <h2 class="section-title">Production Application Interface</h2>
+        <p class="section-desc">
+          Dokumentasi visual antarmuka sistem JudolScan dengan tampilan utama dashboard moderasi komentar YouTube.
+        </p>
+      </div>
+
+      <!-- 1. Default Display: Moderation Dashboard -->
+      <div class="card" style="overflow: hidden; border-color: var(--border-light); margin-bottom: 1.5rem; box-shadow: var(--shadow-sm); padding: 0;">
+        <div style="background: #f1f5f9; padding: 0.65rem 1.25rem; border-bottom: 1px solid var(--border-light); display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 0.4rem;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #64748b; margin-left: 0.5rem;">judolscanner.id/dashboard</span>
+          </div>
+          <span style="font-size: 0.6875rem; font-family: var(--font-mono); color: var(--brand-teal-dark); font-weight: 700;">JudolScan Analytics &amp; Monitoring Dashboard</span>
+        </div>
+        <img src="../assets/images/judolscan/judolscan-dashboard.png" alt="Dashboard Moderasi Komentar YouTube JudolScan" class="previewable-img" data-preview-img="../assets/images/judolscan/judolscan-dashboard.png" data-caption="JudolScan - Analytics &amp; Monitoring Dashboard" style="width: 100%; height: auto; display: block;" loading="lazy">
+        <div style="padding: 1rem 1.25rem; background: #ffffff; border-top: 1px solid var(--border-light); font-size: 0.8125rem; color: var(--text-muted); line-height: 1.6;">
+          <strong>Tampilan Utama / Dashboard Ringkasan (Default View):</strong> Menampilkan ringkasan metrik Total Komentar (30), Video Dianalisis (3), Spam Judi (12), Warning/Ambigu (1), dan Komentar Aman (17), serta grafik distribusi deteksi per video dan chart donat klasifikasi keseluruhan.
+        </div>
+      </div>
+
+      <!-- 3-Column / Responsive Grid: Scanner, LIME XAI, and History -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem;">
+        <!-- Card 1: Scanner Input & API Status -->
+        <div class="card" style="overflow: hidden; border-color: var(--border-light); box-shadow: var(--shadow-xs); padding: 0;">
+          <div style="background: #f1f5f9; padding: 0.65rem 1rem; border-bottom: 1px solid var(--border-light); display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #475569; font-weight: 700;">Scan Video YouTube</span>
+            <span class="badge-pill" style="font-size: 0.625rem; padding: 0.15rem 0.5rem;">Scanner Input</span>
+          </div>
+          <img src="../assets/images/judolscan/judolscan-scanner.png" alt="Formulir Scan Video YouTube JudolScan" class="previewable-img" data-preview-img="../assets/images/judolscan/judolscan-scanner.png" data-caption="JudolScan - Modul Scanner Video YouTube" style="width: 100%; height: auto; display: block;" loading="lazy">
+          <div style="padding: 1rem; background: #ffffff; border-top: 1px solid var(--border-light); font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5;">
+            <strong>Modul Pemindaian Video:</strong> Pengguna memasukkan URL video YouTube dengan batasan scan komentar, serta memantau status kesiapan model Bi-LSTM, explainability LIME, dan konektivitas API YouTube.
+          </div>
+        </div>
+
+        <!-- Card 2: Explainable AI with LIME -->
+        <div class="card" style="overflow: hidden; border-color: var(--border-light); box-shadow: var(--shadow-xs); padding: 0;">
+          <div style="background: #f1f5f9; padding: 0.65rem 1rem; border-bottom: 1px solid var(--border-light); display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #475569; font-weight: 700;">Interpretasi LIME XAI</span>
+            <span class="badge-pill" style="font-size: 0.625rem; padding: 0.15rem 0.5rem;">Explainable AI</span>
+          </div>
+          <img src="../assets/images/judolscan/judolscan-lime.png" alt="Interpretasi LIME XAI JudolScan" class="previewable-img" data-preview-img="../assets/images/judolscan/judolscan-lime.png" data-caption="JudolScan - Transparansi Prediksi LIME XAI" style="width: 100%; height: auto; display: block;" loading="lazy">
+          <div style="padding: 1rem; background: #ffffff; border-top: 1px solid var(--border-light); font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5;">
+            <strong>Transparansi Prediksi LIME:</strong> Menampilkan raw comment, token tensor ternormalisasi, matriks skor keyakinan, serta bar chart kontribusi bobot kata lokal yang memengaruhi keputusan model.
+          </div>
+        </div>
+
+        <!-- Card 3: Riwayat Pemindaian -->
+        <div class="card" style="overflow: hidden; border-color: var(--border-light); box-shadow: var(--shadow-xs); padding: 0;">
+          <div style="background: #f1f5f9; padding: 0.65rem 1rem; border-bottom: 1px solid var(--border-light); display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #475569; font-weight: 700;">Riwayat Pemindaian Komentar</span>
+            <span class="badge-pill" style="font-size: 0.625rem; padding: 0.15rem 0.5rem;">Audit &amp; History</span>
+          </div>
+          <img src="../assets/images/judolscan/judolscan-history.png" alt="Riwayat Pemindaian Komentar JudolScan" class="previewable-img" data-preview-img="../assets/images/judolscan/judolscan-history.png" data-caption="JudolScan - Log Riwayat Pemindaian Komentar" style="width: 100%; height: auto; display: block;" loading="lazy">
+          <div style="padding: 1rem; background: #ffffff; border-top: 1px solid var(--border-light); font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5;">
+            <strong>Arsip Log Analisis:</strong> Riwayat pemindaian video lengkap dengan thumbnail video, nama channel, tanggal pemindaian, rekapitulasi jumlah komentar (Judi, Warning, Aman), dan navigasi aksi.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       4. PROBLEM STATEMENT & BACKGROUND
+       ====================================================================== -->
+  <section class="py-section border-b-subtle bg-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">PROBLEM STATEMENT</span>
+        <h2 class="section-title">Permasalahan Promosi Judi Online pada Komentar YouTube</h2>
+        <p class="section-desc">
+          Tantangan bahasa teks informal, pola penulisan evasif, dan kebutuhan transparansi model AI.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem;">
+        <div class="card" style="background: #ffffff; padding: 1.5rem; box-shadow: var(--shadow-xs);">
+          <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.75rem;">
+            <div style="width: 36px; height: 36px; border-radius: var(--radius-sm); background: #fee2e2; display: flex; align-items: center; justify-content: center; color: #b91c1c;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <h3 style="font-size: 1rem; font-weight: 700; color: #0f172a;">Spam Komentar Berskala Besar</h3>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+            Akun bot promosi judi online secara sistematis menyisipkan tautan dan ajakan berjudi di kolom komentar video publik yang populer, merusak reputasi kanal dan membahayakan audiens umum.
+          </p>
+        </div>
+
+        <div class="card" style="background: #ffffff; padding: 1.5rem; box-shadow: var(--shadow-xs);">
+          <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.75rem;">
+            <div style="width: 36px; height: 36px; border-radius: var(--radius-sm); background: #fef3c7; display: flex; align-items: center; justify-content: center; color: #b45309;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <h3 style="font-size: 1rem; font-weight: 700; color: #0f172a;">Variasi Penulisan Teks Evasif</h3>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+            Penyebar spam menggunakan teknik penulisan tidak baku, leetspeak, pemisahan spasi kata (seperti "P U L A u 7 7 7", "m4xw1n"), dan emoji berlebihan untuk mengelabui filter kata kunci konvensional.
+          </p>
+        </div>
+
+        <div class="card" style="background: #ffffff; padding: 1.5rem; box-shadow: var(--shadow-xs);">
+          <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.75rem;">
+            <div style="width: 36px; height: 36px; border-radius: var(--radius-sm); background: #e0f2fe; display: flex; align-items: center; justify-content: center; color: #0369a1;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <h3 style="font-size: 1rem; font-weight: 700; color: #0f172a;">Kebutuhan Transparansi Model (XAI)</h3>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+            Model deep learning konvensional bersifat kotak hitam (*black-box*). Tanpa penjelasan alasan klasifikasi, moderator ragu mengambil tindakan karena tidak memahami kata mana yang memicu peringatan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       5. PROPOSED SOLUTION & WORKFLOW
+       ====================================================================== -->
+  <section class="py-section border-b-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">THE PROPOSED SOLUTION</span>
+        <h2 class="section-title">Alur Deteksi Komentar JudolScan</h2>
+        <p class="section-desc">
+          Mekanisme bertahap dari pemanggilan API publik hingga visualisasi interaktif pada dashboard.
+        </p>
+      </div>
+
+      <div class="card" style="padding: 1.75rem; background: #ffffff; box-shadow: var(--shadow-xs);">
+        <div class="arch-diagram">
+          <!-- Step 1 -->
+          <div class="arch-node">
+            <div>
+              <div class="arch-node-tag">TAHAP 1</div>
+              <h3 class="arch-node-title">Input URL Video</h3>
+              <p class="arch-node-desc">Pengguna memasukkan URL video YouTube publik yang ingin diperiksa komentarnya.</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.625rem; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+              Next.js Frontend
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="arch-node active-layer">
+            <div>
+              <div class="arch-node-tag">TAHAP 2</div>
+              <h3 class="arch-node-title">Pengambilan Komentar</h3>
+              <p class="arch-node-desc">Sistem memanggil YouTube Data API v3 untuk mengunduh daftar komentar dan metadata.</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.625rem; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+              YouTube Data API v3
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="arch-node active-layer">
+            <div>
+              <div class="arch-node-tag">TAHAP 3</div>
+              <h3 class="arch-node-title">Preprocessing Teks</h3>
+              <p class="arch-node-desc">Pembersihan tanda baca, case folding, normalisasi leetspeak, dan tokenisasi teks.</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.625rem; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+              Canonical Pipeline
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="arch-node active-layer">
+            <div>
+              <div class="arch-node-tag">TAHAP 4</div>
+              <h3 class="arch-node-title">Inferensi Bi-LSTM</h3>
+              <p class="arch-node-desc">Model neural network menganalisis urutan dan konteks teks dua arah untuk prediksi probabilitas.</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.625rem; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+              Deep Sequence Model
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="arch-node active-layer">
+            <div>
+              <div class="arch-node-tag">TAHAP 5</div>
+              <h3 class="arch-node-title">Rule-Based Booster</h3>
+              <p class="arch-node-desc">Evaluasi aturan kata kunci domain judi untuk penguatan probabilitas atau penyesuaian kelas.</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.625rem; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+              Hybrid Rule Engine
+            </div>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="arch-node active-layer">
+            <div>
+              <div class="arch-node-tag">TAHAP 6</div>
+              <h3 class="arch-node-title">Penjelasan LIME XAI</h3>
+              <p class="arch-node-desc">LIME mengekstraksi bobot kontribusi kata individual yang memengaruhi prediksi kelas.</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.625rem; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+              Local Feature Attribution
+            </div>
+          </div>
+
+          <!-- Step 7 -->
+          <div class="arch-node">
+            <div>
+              <div class="arch-node-tag">TAHAP 7</div>
+              <h3 class="arch-node-title">Tampilan Dashboard</h3>
+              <p class="arch-node-desc">Hasil pengelompokan (Aman, Spam Judi, Warning) disajikan secara interaktif bagi pengguna.</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.625rem; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+              Interactive Moderation UI
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       6. AI ARCHITECTURE & TECHNICAL DEEP DIVE
+       ====================================================================== -->
+  <section class="py-section border-b-subtle bg-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">TECHNICAL DEEP DIVE</span>
+        <h2 class="section-title">Arsitektur Sistem &amp; Keputusan Rekayasa AI</h2>
+        <p class="section-desc">
+          Hubungan antar komponen perangkat lunak, model deep learning, dan modul explainability.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem;">
+        <!-- Card 1 -->
+        <div class="card" style="padding: 1.5rem; background: #ffffff; box-shadow: var(--shadow-xs);">
+          <h3 style="font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">
+            Mengapa Memilih Arsitektur Bi-LSTM?
+          </h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.75rem;">
+            Bi-directional Long Short-Term Memory (Bi-LSTM) memproses urutan teks dari dua arah secara bersamaan (kiri ke kanan dan kanan ke kiri). Hal ini memungkinkan model memahami konteks kata sebelum dan sesudah frasa kunci promosi secara utuh, mengatasi keterbatasan RNN standar terhadap dependensi jangka panjang (*long-term dependencies*).
+          </p>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--brand-teal-dark); background: #f0fdfa; padding: 0.35rem 0.65rem; border-radius: var(--radius-sm); display: inline-block;">
+            Bidirectional Sequence Modeling
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" style="padding: 1.5rem; background: #ffffff; box-shadow: var(--shadow-xs);">
+          <h3 style="font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">
+            Sinergi Model Deep Learning &amp; Rule-Based
+          </h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.75rem;">
+            Klasifikasi berbasis model murni rentan terhadap variasi leetspeak baru yang belum terdapat pada data latih. Rule-Based Booster berfungsi sebagai lapis pengaman (*safety net*) deterministik yang mengenali pola pola nama situs judi atau tautan eksternal untuk menyesuaikan skor keyakinan prediksi.
+          </p>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--brand-teal-dark); background: #f0fdfa; padding: 0.35rem 0.65rem; border-radius: var(--radius-sm); display: inline-block;">
+            Probabilistic + Deterministic Hybrid
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" style="padding: 1.5rem; background: #ffffff; box-shadow: var(--shadow-xs);">
+          <h3 style="font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">
+            Peran &amp; Batasan Nyata LIME XAI
+          </h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.75rem;">
+            LIME membangun model linier lokal di sekitar instance komentar yang diuji untuk mengukur signifikansi setiap kata terhadap skor prediksi. LIME memberikan atribusi fitur lokal yang mudah dipahami manusia, namun tidak merepresentasikan seluruh mekanisme matematika internal Bi-LSTM secara global.
+          </p>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--brand-teal-dark); background: #f0fdfa; padding: 0.35rem 0.65rem; border-radius: var(--radius-sm); display: inline-block;">
+            Local Surrogate Interpretability
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       7. HYBRID DETECTION PIPELINE
+       ====================================================================== -->
+  <section class="py-section border-b-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">HYBRID PIPELINE</span>
+        <h2 class="section-title">Tiga Pilar Deteksi &amp; Konsistensi Label Final</h2>
+        <p class="section-desc">
+          Integrasi terarah antara model sekuensial, aturan kamus kata kunci, dan atribusi fitur lokal.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+        <!-- Pilar 1 -->
+        <div class="contrib-card">
+          <div class="contrib-header">
+            <div class="contrib-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700; color: var(--brand-teal-dark);">PILAR 1</span>
+              <h3 class="contrib-title">Bi-LSTM Neural Network</h3>
+            </div>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+            Mempelajari representasi vektor kalimat komentar secara bidirectional. Mengidentifikasi pola gramatikal dan semantik yang mencirikan rayuan promosi akun judi tanpa harus bergantung pada kecocokan teks yang kaku.
+          </p>
+        </div>
+
+        <!-- Pilar 2 -->
+        <div class="contrib-card">
+          <div class="contrib-header">
+            <div class="contrib-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700; color: var(--brand-teal-dark);">PILAR 2</span>
+              <h3 class="contrib-title">Rule-Based Booster Engine</h3>
+            </div>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+            Mengevaluasi keberadaan istilah spesifik perjudian (misal: "maxwin", "slot", "gacor", pola domain acak). Jika terdeteksi kuat, aturan pendukung dapat meng-override atau menaikkan bobot risiko komentar ke kategori Spam Judi.
+          </p>
+        </div>
+
+        <!-- Pilar 3 -->
+        <div class="contrib-card">
+          <div class="contrib-header">
+            <div class="contrib-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700; color: var(--brand-teal-dark);">PILAR 3</span>
+              <h3 class="contrib-title">LIME Explainable AI</h3>
+            </div>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+            Menguraikan nilai koefisien positif dan negatif untuk setiap kata pada sampel teks yang diperiksa. Menjelaskan secara transparan kepada pengguna mengapa sistem menggolongkan teks tersebut ke dalam kelas tertentu.
+          </p>
+        </div>
+      </div>
+
+      <!-- Final Label Standards Callout -->
+      <div style="background: #ffffff; border-radius: var(--radius-lg); border: 1px solid var(--border-light); padding: 1.5rem; box-shadow: var(--shadow-2xs);">
+        <h4 style="font-size: 0.9375rem; font-weight: 700; color: #0f172a; margin-bottom: 0.75rem;">Standarisasi Tiga Kelas Label Final Penelitian:</h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+          <div style="border-left: 3px solid #10b981; padding-left: 0.875rem;">
+            <strong style="color: #065f46; font-size: 0.875rem;">1. Aman</strong>
+            <p style="font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5; margin-top: 0.25rem;">
+              Komentar wajar penonton video yang tidak terindikasi mengandung konten promosi, tautan mencurigakan, atau istilah perjudian.
+            </p>
+          </div>
+          <div style="border-left: 3px solid #ef4444; padding-left: 0.875rem;">
+            <strong style="color: #991b1b; font-size: 0.875rem;">2. Spam Judi</strong>
+            <p style="font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5; margin-top: 0.25rem;">
+              Komentar yang memiliki probabilitas tinggi dan bukti kuat promosi situs judi online berdasarkan model Bi-LSTM dan Rule-Based.
+            </p>
+          </div>
+          <div style="border-left: 3px solid #f59e0b; padding-left: 0.875rem;">
+            <strong style="color: #92400e; font-size: 0.875rem;">3. Warning</strong>
+            <p style="font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5; margin-top: 0.25rem;">
+              Komentar ambigu dengan skor probabilitas marginal yang direkomendasikan untuk ditinjau lebih lanjut secara manual oleh moderator.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================================================================
+       10. TESTING, CHALLENGES & REFLECTION
+       ====================================================================== -->
+  <section class="py-section border-b-subtle bg-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">RESEARCH INSIGHTS</span>
+        <h2 class="section-title">Tantangan Rekayasa, Pembelajaran &amp; Refleksi</h2>
+        <p class="section-desc">
+          Evaluasi teknis terhadap implementasi sistem dan arahan pengembangan masa depan.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem;">
+        <div class="card" style="padding: 1.5rem; background: #ffffff; box-shadow: var(--shadow-xs);">
+          <h3 style="font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">
+            Tantangan Normalisasi Slang &amp; Evasif
+          </h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+            Komentar promosi judi terus berevolusi menggunakan karakter khusus dan pemisahan spasi liar untuk lolos dari filter. Pembelajaran utama adalah merancang regex preprocessing kanonis yang mampu merestorasi kata sebelum diumpankan ke model Bi-LSTM.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 1.5rem; background: #ffffff; box-shadow: var(--shadow-xs);">
+          <h3 style="font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">
+            Optimasi Latensi Komputasi LIME
+          </h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+            LIME memerlukan ratusan permutasi teks per sampel untuk menghasilkan regresi linier lokal, yang memakan waktu jika dijalankan synchronously pada ratusan komentar sekaligus. Sistem dioptimasi agar inferensi LIME diaktifkan secara selektif pada komentar bertanda khusus.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 1.5rem; background: #ffffff; box-shadow: var(--shadow-xs);">
+          <h3 style="font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">
+            Refleksi &amp; Potensi Masa Depan
+          </h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+            Sistem ini membuktikan efektivitas penggabungan deep learning dan rule-based dalam domain konten berbahasa Indonesia. Potensi riset lanjutan mencakup adaptasi model Transformer (IndoBERT) serta integrasi deteksi multi-platform pada kolom komentar media sosial lainnya.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       11. FOOTER NAVIGATION CTA
+       ====================================================================== -->
+  <section class="py-section">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-light);">
+        <a href="../index.html#projects" class="btn btn-secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          <span>Back to Home</span>
+        </a>
+
+        <a href="../experience.html" class="btn btn-primary">
+          <span>View Career Experience</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       12. FOOTER
+       ====================================================================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-meta">
+        <span class="footer-copy">&copy; 2026 Rizky Noufal Hidayat. Built with Vanilla HTML, CSS, and JavaScript.</span>
+        <div class="footer-pills">
+          <span class="footer-pill">
+            <span class="footer-pill-dot"></span>
+            Vanilla Stack
+          </span>
+          <span class="footer-pill">Hybrid AI &amp; XAI</span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html" class="footer-link">Home</a>
+        <a href="../about.html" class="footer-link">About</a>
+        <a href="../projects.html" class="footer-link">Projects</a>
+        <a href="../experience.html" class="footer-link">Experience</a>
+        <a href="../contact.html" class="footer-link">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

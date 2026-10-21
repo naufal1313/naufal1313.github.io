@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Rizky Noufal Hidayat - Backend Engineer</title>
+  <meta name="description" content="About Rizky Noufal Hidayat - Backend Engineer specializing in Golang, Clean Architecture, REST APIs, and high-reliability distributed systems.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-avatar-link" aria-label="Rizky Noufal Hidayat">
+        <img src="assets/images/profile.jpg" alt="Rizky Noufal Hidayat" class="brand-avatar-img">
+        <div class="brand-avatar-text">
+          <span class="brand-avatar-name">Rizky Noufal Hidayat</span>
+          <span class="brand-avatar-role">Junior Backend Developer</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="experience.html" class="nav-link">Experience</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cv/Rizky-Noufal-Hidayat-CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="min-height: 36px; padding: 0.35rem 0.875rem; font-size: 0.75rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download CV</span>
+        </a>
+        <a href="about.html" class="avatar-btn" aria-label="About Profile">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+      </div>
+
+      <button type="button" class="nav-toggle-btn" id="nav-toggle-btn" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <nav class="mobile-links">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="about.html" class="mobile-link active">About</a>
+        <a href="projects.html" class="mobile-link">Projects</a>
+        <a href="experience.html" class="mobile-link">Experience</a>
+        <a href="contact.html" class="mobile-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN ABOUT CONTENT -->
+  <main>
+    <!-- PAGE HERO -->
+    <section class="py-section" style="border-bottom: 1px solid var(--border-light); background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);">
+      <div class="container" style="max-width: 860px;">
+        <div class="hero-badge" style="margin-bottom: 1rem;">
+          <span class="hero-badge-dot"></span>
+          <span>Profile & Background</span>
+        </div>
+        <h1 style="font-size: 2.5rem; font-weight: 900; color: #0f172a; line-height: 1.15; letter-spacing: -0.03em;">
+          Engineering backend systems that are predictable, performant, and maintainable.
+        </h1>
+        <p style="font-size: 1.0625rem; color: var(--text-muted); line-height: 1.7; margin-top: 1.25rem;">
+          Hi, I am Rizky Noufal Hidayat. A Backend Engineer with practical production experience building mission-critical services at Bank Rakyat Indonesia (BRI) and PT Indocement Tunggal Prakarsa Tbk.
+        </p>
+      </div>
+    </section>
+
+    <!-- BIO NARRATIVE & METRICS -->
+    <section class="py-section" style="background-color: #ffffff;">
+      <div class="container" style="max-width: 860px;">
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2.5rem;">
+          <!-- Bio Text -->
+          <div>
+            <h2 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="color: var(--brand-teal); font-family: var(--font-mono); font-size: 0.875rem;">01.</span>
+              Background & Focus
+            </h2>
+            <div style="font-size: 0.9375rem; color: var(--text-muted); line-height: 1.8; display: flex; flex-direction: column; gap: 1rem;">
+              <p>
+                My passion is backend software engineering: translating business rules into scalable database models, designing robust RESTful APIs, and implementing Clean Architecture patterns that stand the test of time.
+              </p>
+              <p>
+                During my tenure as a Software Engineer Intern at <strong>Bank Rakyat Indonesia (BRI)</strong>, I focused on the Demeter Human Capital internal service. I engineered transactional REST APIs in Golang with PostgreSQL, containerized workflows with Docker, and ensured clean separation between repository, usecase, and delivery layers.
+              </p>
+              <p>
+                At <strong>PT Indocement Tunggal Prakarsa Tbk.</strong>, I helped build the Point of Sales Material (POSM) web tracker, handling multi-branch inventory movements, transactional consistency with GORM, and JWT-based Role-Based Access Control (RBAC).
+              </p>
+              <p>
+                In addition to backend engineering, I completed academic research on automated online gambling spam detection, combining Golang ingestion pipelines with Python FastAPI, Bi-LSTM neural networks, and LIME model explainability.
+              </p>
+            </div>
+          </div>
+
+          <!-- Academic & Key Metrics Cards -->
+          <div>
+            <h2 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="color: var(--brand-teal); font-family: var(--font-mono); font-size: 0.875rem;">02.</span>
+              Higher Education & Verified Metrics
+            </h2>
+
+            <!-- University Card -->
+            <div class="card" style="padding: 1.5rem; margin-bottom: 1.5rem; border-color: var(--border-light); background-color: #f8fafc;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+                <div>
+                  <div style="font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700; color: var(--brand-teal); text-transform: uppercase; letter-spacing: 0.05em;">
+                    HIGHER EDUCATION
+                  </div>
+                  <h3 style="font-size: 1.125rem; font-weight: 800; color: #0f172a; margin-top: 0.25rem;">
+                    Universitas Pakuan
+                  </h3>
+                  <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.15rem;">
+                    Bachelor of Computer Science (S.Kom) in Informatics Engineering
+                  </p>
+                </div>
+                <div style="text-align: right;">
+                  <span class="badge-pill badge-academic">2021 - 2025</span>
+                  <div style="font-family: var(--font-mono); font-weight: 900; font-size: 1.25rem; color: var(--brand-teal-dark); margin-top: 0.35rem;">
+                    GPA 3.65 / 4.00
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4 Metric Cards -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+              <div class="card metric-card">
+                <div class="metric-val">3.65</div>
+                <div class="metric-title">Cumulative GPA</div>
+                <div class="metric-sub">Pakuan University</div>
+              </div>
+              <div class="card metric-card">
+                <div class="metric-val">2+</div>
+                <div class="metric-title">Production Systems</div>
+                <div class="metric-sub">Banking & Industrial</div>
+              </div>
+              <div class="card metric-card">
+                <div class="metric-val">100%</div>
+                <div class="metric-title">RESTful Delivery</div>
+                <div class="metric-sub">Standardized JSON API</div>
+              </div>
+              <div class="card metric-card">
+                <div class="metric-val">1</div>
+                <div class="metric-title">AI Research Paper</div>
+                <div class="metric-sub">Bi-LSTM + LIME Detection</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Engineering Principles -->
+          <div>
+            <h2 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="color: var(--brand-teal); font-family: var(--font-mono); font-size: 0.875rem;">03.</span>
+              Core Engineering Philosophy
+            </h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+              <div class="card" style="padding: 1.25rem; background-color: #ffffff;">
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: var(--brand-teal); margin-bottom: 0.35rem;">
+                  PRINCIPLE 1
+                </div>
+                <h3 style="font-size: 0.9375rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">
+                  Predictability & Defensive Code
+                </h3>
+                <p style="font-size: 0.8125rem; color: var(--text-muted); line-height: 1.6;">
+                  Handle edge cases upfront, write meaningful error messages, use explicit transactions with database locks when modifying balances or inventory, and never ignore returned errors.
+                </p>
+              </div>
+
+              <div class="card" style="padding: 1.25rem; background-color: #ffffff;">
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: var(--brand-teal); margin-bottom: 0.35rem;">
+                  PRINCIPLE 2
+                </div>
+                <h3 style="font-size: 0.9375rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">
+                  Clean Architecture Separation
+                </h3>
+                <p style="font-size: 0.8125rem; color: var(--text-muted); line-height: 1.6;">
+                  Keep business logic isolated from database frameworks and HTTP transport layers. This ensures our code remains unit-testable and adaptable to infrastructure changes.
+                </p>
+              </div>
+
+              <div class="card" style="padding: 1.25rem; background-color: #ffffff;">
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: var(--brand-teal); margin-bottom: 0.35rem;">
+                  PRINCIPLE 3
+                </div>
+                <h3 style="font-size: 0.9375rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">
+                  Fast, Lightweight Delivery
+                </h3>
+                <p style="font-size: 0.8125rem; color: var(--text-muted); line-height: 1.6;">
+                  Avoid unnecessary abstraction layers and heavy frameworks when lean tools do the job better. Simple architectures are easier to maintain, scale, and debug under high load.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Complete Skills Matrix Section -->
+          <div>
+            <h2 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="color: var(--brand-teal); font-family: var(--font-mono); font-size: 0.875rem;">04.</span>
+              Technical Competencies Matrix
+            </h2>
+
+            <div class="skill-grid">
+              <!-- Featured Card -->
+              <div class="skill-card-featured">
+                <div class="skill-featured-badge">Core Specialization</div>
+                <h3 class="skill-featured-title">Backend & API Development</h3>
+                <p class="skill-featured-desc">
+                  Building high-concurrency services, structured routing, middleware authentication, and type-safe transactional APIs.
+                </p>
+                <div class="skill-pills">
+                  <span class="skill-pill-featured">Golang (Go)</span>
+                  <span class="skill-pill-featured">RESTful APIs</span>
+                  <span class="skill-pill-featured">Fiber & Gin</span>
+                  <span class="skill-pill-featured">Clean Architecture</span>
+                  <span class="skill-pill-featured">JWT Auth & RBAC</span>
+                  <span class="skill-pill-featured">JSON-RPC</span>
+                </div>
+              </div>
+
+              <!-- AI & Data -->
+              <div class="card skill-card-regular">
+                <div class="skill-regular-title">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
+                  <span>AI & Data Pipeline</span>
+                </div>
+                <div class="skill-pills">
+                  <span class="skill-pill-regular">Python</span>
+                  <span class="skill-pill-regular">FastAPI</span>
+                  <span class="skill-pill-regular">Bi-LSTM</span>
+                  <span class="skill-pill-regular">LIME Explainability</span>
+                  <span class="skill-pill-regular">NLP Data Prep</span>
+                </div>
+              </div>
+
+              <!-- Database & Storage -->
+              <div class="card skill-card-regular">
+                <div class="skill-regular-title">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                  <span>Database & Storage</span>
+                </div>
+                <div class="skill-pills">
+                  <span class="skill-pill-regular">PostgreSQL</span>
+                  <span class="skill-pill-regular">MySQL</span>
+                  <span class="skill-pill-regular">GORM</span>
+                  <span class="skill-pill-regular">SQL Schema Design</span>
+                  <span class="skill-pill-regular">Redis (Caching)</span>
+                </div>
+              </div>
+
+              <!-- System & Cloud -->
+              <div class="card skill-card-regular">
+                <div class="skill-regular-title">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                  <span>System & Cloud</span>
+                </div>
+                <div class="skill-pills">
+                  <span class="skill-pill-regular">Docker</span>
+                  <span class="skill-pill-regular">Linux / Bash</span>
+                  <span class="skill-pill-regular">Git & GitHub</span>
+                  <span class="skill-pill-regular">Nginx</span>
+                </div>
+              </div>
+
+              <!-- Architecture -->
+              <div class="card skill-card-regular">
+                <div class="skill-regular-title">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                  <span>Architecture & Patterns</span>
+                </div>
+                <div class="skill-pills">
+                  <span class="skill-pill-regular">Clean Architecture</span>
+                  <span class="skill-pill-regular">Repository Pattern</span>
+                  <span class="skill-pill-regular">Dependency Injection</span>
+                  <span class="skill-pill-regular">Domain-Driven Design</span>
+                </div>
+              </div>
+
+              <!-- Development Tools -->
+              <div class="card skill-card-regular">
+                <div class="skill-regular-title">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                  <span>Development Tools</span>
+                </div>
+                <div class="skill-pills">
+                  <span class="skill-pill-regular">Postman</span>
+                  <span class="skill-pill-regular">VS Code</span>
+                  <span class="skill-pill-regular">Swagger / OpenAPI</span>
+                  <span class="skill-pill-regular">TablePlus</span>
+                </div>
+              </div>
+
+              <!-- Soft Skills -->
+              <div class="card skill-card-regular">
+                <div class="skill-regular-title">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  <span>Soft Skills & Collaboration</span>
+                </div>
+                <div class="skill-pills">
+                  <span class="skill-pill-regular">Cross-functional Teamwork</span>
+                  <span class="skill-pill-regular">Technical Documentation</span>
+                  <span class="skill-pill-regular">Problem Solving</span>
+                  <span class="skill-pill-regular">Agile / Scrum</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Next Step CTA -->
+        <div style="margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border-light); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <a href="projects.html" class="btn btn-secondary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            <span>View Projects</span>
+          </a>
+
+          <a href="experience.html" class="btn btn-primary">
+            <span>Explore Experience Timeline</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-meta">
+        <span class="footer-copy">© 2026 Rizky Noufal Hidayat. Built with Vanilla HTML, CSS, and JavaScript.</span>
+        <div class="footer-pills">
+          <span class="footer-pill">
+            <span class="footer-pill-dot"></span>
+            Vanilla Stack
+          </span>
+          <span class="footer-pill">Clean Architecture</span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="projects.html" class="footer-link">Projects</a>
+        <a href="experience.html" class="footer-link">Experience</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

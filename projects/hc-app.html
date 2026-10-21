@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demeter (Human Capital App) - Case Study | Rizky Noufal Hidayat</title>
+  <meta name="description" content="Technical Case Study untuk Demeter: Enterprise Human Capital Application di PT Bank Rakyat Indonesia (Persero) Tbk. Fokus pada Backend Engineering, Golang, REST API, PostgreSQL, dan Code Quality.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+
+  <!-- ======================================================================
+       1. NAVBAR
+       ====================================================================== -->
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-avatar-link" aria-label="Rizky Noufal Hidayat">
+        <img src="../assets/images/profile.jpg" alt="Rizky Noufal Hidayat" class="brand-avatar-img">
+        <div class="brand-avatar-text">
+          <span class="brand-avatar-name">Rizky Noufal Hidayat</span>
+          <span class="brand-avatar-role">Junior Backend Developer</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../about.html" class="nav-link">About</a>
+        <a href="../projects.html" class="nav-link active">Projects</a>
+        <a href="../experience.html" class="nav-link">Experience</a>
+        <a href="../contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="../cv/Rizky-Noufal-Hidayat-CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="min-height: 36px; padding: 0.35rem 0.875rem; font-size: 0.75rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download CV</span>
+        </a>
+        <a href="../about.html" class="avatar-btn" aria-label="About Profile">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+      </div>
+
+      <button type="button" class="nav-toggle-btn" id="nav-toggle-btn" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <nav class="mobile-links">
+        <a href="../index.html" class="mobile-link">Home</a>
+        <a href="../about.html" class="mobile-link">About</a>
+        <a href="../projects.html" class="mobile-link active">Projects</a>
+        <a href="../experience.html" class="mobile-link">Experience</a>
+        <a href="../contact.html" class="mobile-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       2. HERO HEADER SECTION (Harmonized with Home Design)
+       ====================================================================== -->
+  <section class="py-section border-b-subtle hero-mesh-wrapper">
+    <div class="ambient-glow glow-teal" aria-hidden="true"></div>
+    <div class="ambient-glow glow-indigo" aria-hidden="true"></div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <!-- Breadcrumb / Back Link -->
+      <div style="margin-bottom: 1.25rem;">
+        <a href="../index.html#projects" class="btn-link" style="font-size: 0.8125rem; font-family: var(--font-mono);">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          <span>Back to Home</span>
+        </a>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+        <span class="badge-pill badge-professional">Professional Experience</span>
+        <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-light);">
+          Agustus 2024 - Desember 2024
+        </span>
+      </div>
+
+      <h1 style="font-size: 2.25rem; font-weight: 900; color: #0f172a; line-height: 1.2; letter-spacing: -0.025em; max-width: 900px;">
+        Demeter: Enterprise Human Capital Application
+      </h1>
+      <p style="font-size: 1.25rem; font-weight: 700; color: var(--brand-teal-dark); margin-top: 0.35rem;">
+        PT Bank Rakyat Indonesia (Persero) Tbk.
+      </p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; font-size: 0.8125rem; font-family: var(--font-mono); color: var(--text-muted);">
+        <div style="background: rgba(255,255,255,0.85); padding: 0.4rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light); box-shadow: var(--shadow-2xs);">
+          Role: <strong style="color: #0f172a;">Backend Engineer Intern</strong>
+        </div>
+        <div style="background: rgba(255,255,255,0.85); padding: 0.4rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light); box-shadow: var(--shadow-2xs);">
+          Domain: <strong style="color: #0f172a;">Enterprise Human Capital System</strong>
+        </div>
+        <div style="background: rgba(255,255,255,0.85); padding: 0.4rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light); box-shadow: var(--shadow-2xs);">
+          Focus: <strong style="color: #0f172a;">REST API, Database Optimization, Auth &amp; Code Quality</strong>
+        </div>
+      </div>
+
+      <p style="margin-top: 1.25rem; color: var(--text-muted); line-height: 1.7; font-size: 1rem; max-width: 860px;">
+        Demeter merupakan sistem manajemen Human Capital terpusat di lingkungan PT Bank Rakyat Indonesia (Persero) Tbk. Aplikasi ini dirancang untuk memproses siklus hidup talenta kerja, pengelolaan struktur hierarki organisasi, serta pelaporan analitik berbasis data terintegrasi.
+      </p>
+
+      <!-- Enterprise Confidentiality Notice -->
+      <div class="confidentiality-notice" style="margin-top: 1.75rem; border-radius: var(--radius-md); border: 1px solid #bfdbfe; background: #eff6ff; padding: 1.25rem; max-width: 960px;">
+        <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <div>
+            <h2 style="font-size: 0.875rem; font-weight: 700; color: #1e40af; margin-bottom: 0.25rem;">
+              Pernyataan Kepatuhan &amp; Kerahasiaan Perusahaan (Confidentiality Notice)
+            </h2>
+            <p style="font-size: 0.8125rem; color: #1e3a8a; line-height: 1.6;">
+              Untuk menjaga kepatuhan terhadap perjanjian kerahasiaan informasi (NDA) dan kebijakan keamanan data perbankan, seluruh dokumentasi pada halaman ini telah disanitasi dan digeneralisasi. Halaman ini tidak menampilkan source code asli internal bank, kredensial basis data, secret key, token otentikasi, endpoint privat, data nyata pegawai, maupun infrastruktur internal sensitif. Seluruh visualisasi arsitektur merupakan ilustrasi edukatif generik.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       3. PRODUCTION APPLICATION INTERFACE GALLERY
+       ====================================================================== -->
+  <section class="py-section border-b-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">VERIFIED INTERFACE</span>
+        <h2 class="section-title">Production Application Interface</h2>
+        <p class="section-desc">
+          Dokumentasi visual tampilan antarmuka sistem Demeter di lingkungan perbankan BRI dengan default tampilan awal portal autentikasi SSO.
+        </p>
+      </div>
+
+      <!-- 1. Default Display: Sign In Portal -->
+      <div class="card" style="overflow: hidden; border-color: var(--border-light); margin-bottom: 1.5rem; box-shadow: var(--shadow-sm); padding: 0;">
+        <div style="background: #f1f5f9; padding: 0.65rem 1.25rem; border-bottom: 1px solid var(--border-light); display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 0.4rem;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #64748b; margin-left: 0.5rem;">demeter.bri.co.id/login</span>
+          </div>
+          <span style="font-size: 0.6875rem; font-family: var(--font-mono); color: var(--brand-teal-dark); font-weight: 700;">BRI Gate (SSO) &amp; Security Gateway</span>
+        </div>
+        <img src="../assets/images/bri/demeter-login.png" alt="Demeter App Sign In Portal BRI Gate SSO" class="previewable-img" data-preview-img="../assets/images/bri/demeter-login.png" data-caption="Demeter App BRI - Sign In Portal BRI Gate SSO" style="width: 100%; height: auto; display: block;" loading="lazy">
+        <div style="padding: 1rem 1.25rem; background: #ffffff; border-top: 1px solid var(--border-light); font-size: 0.8125rem; color: var(--text-muted); line-height: 1.6;">
+          <strong>Tampilan Awal / Gateway Masuk:</strong> Portal login terintegrasi Single Sign-On (SSO) BRI Gate dan login manual dengan verifikasi JWT, proteksi brute-force lockout, dan penugasan peran (RBAC).
+        </div>
+      </div>
+
+      <!-- 2-Column Grid: Dashboard & Org Hierarchy Tree -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 1.5rem;">
+        <!-- Card Left: Main Dashboard -->
+        <div class="card" style="overflow: hidden; border-color: var(--border-light); box-shadow: var(--shadow-xs); padding: 0;">
+          <div style="background: #f1f5f9; padding: 0.65rem 1rem; border-bottom: 1px solid var(--border-light); display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #475569; font-weight: 700;">Talent Analytics Dashboard</span>
+            <span class="badge-pill" style="font-size: 0.625rem; padding: 0.15rem 0.5rem;">Dashboard View</span>
+          </div>
+          <img src="../assets/images/bri/demeter-dashboard.png" alt="Demeter App Talent Management Dashboard" class="previewable-img" data-preview-img="../assets/images/bri/demeter-dashboard.png" data-caption="Demeter App BRI - Talent Analytics Dashboard" style="width: 100%; height: auto; display: block;" loading="lazy">
+          <div style="padding: 1rem; background: #ffffff; border-top: 1px solid var(--border-light); font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5;">
+            <strong>Dashboard Talenta:</strong> Ringkasan analitik talenta aktif, rasio kategori organik/non-organik/manage service, dan grafik distribusi per departemen.
+          </div>
+        </div>
+
+        <!-- Card Right: Org Hierarchy Tree -->
+        <div class="card" style="overflow: hidden; border-color: var(--border-light); box-shadow: var(--shadow-xs); padding: 0;">
+          <div style="background: #f1f5f9; padding: 0.65rem 1rem; border-bottom: 1px solid var(--border-light); display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #475569; font-weight: 700;">Organization Hierarchy Tree</span>
+            <span class="badge-pill" style="font-size: 0.625rem; padding: 0.15rem 0.5rem;">Export PDF</span>
+          </div>
+          <img src="../assets/images/bri/demeter-org-tree.png" alt="Demeter App Organization Structure Hierarchy Tree" class="previewable-img" data-preview-img="../assets/images/bri/demeter-org-tree.png" data-caption="Demeter App BRI - Organization Structure Hierarchy Tree" style="width: 100%; height: auto; display: block;" loading="lazy">
+          <div style="padding: 1rem; background: #ffffff; border-top: 1px solid var(--border-light); font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5;">
+            <strong>Hierarki Organisasi:</strong> Visualisasi bagan struktur bertingkat (Group Head, Department Head, Team Lead) dengan kemampuan pencarian dan ekspor PDF.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       4. TECHNICAL STACK & DEVELOPMENT TOOLS
+       ====================================================================== -->
+  <section class="py-section border-b-subtle bg-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">TECH ARSENAL</span>
+        <h2 class="section-title">Technical Stack &amp; Development Tools</h2>
+        <p class="section-desc">
+          Teknologi backend, basis data relasional, pipeline pengujian keamanan, dan tooling yang digunakan dalam pengembangan sistem.
+        </p>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+        <span class="tech-tag" style="background: #ffffff; padding: 0.5rem 0.875rem; font-size: 0.8125rem; font-weight: 600; box-shadow: var(--shadow-2xs);">Golang (Go)</span>
+        <span class="tech-tag" style="background: #ffffff; padding: 0.5rem 0.875rem; font-size: 0.8125rem; font-weight: 600; box-shadow: var(--shadow-2xs);">RESTful API</span>
+        <span class="tech-tag" style="background: #ffffff; padding: 0.5rem 0.875rem; font-size: 0.8125rem; font-weight: 600; box-shadow: var(--shadow-2xs);">PostgreSQL</span>
+        <span class="tech-tag" style="background: #ffffff; padding: 0.5rem 0.875rem; font-size: 0.8125rem; font-weight: 600; box-shadow: var(--shadow-2xs);">Docker</span>
+        <span class="tech-tag" style="background: #ffffff; padding: 0.5rem 0.875rem; font-size: 0.8125rem; font-weight: 600; box-shadow: var(--shadow-2xs);">Git &amp; GitHub Enterprise</span>
+        <span class="tech-tag" style="background: #ffffff; padding: 0.5rem 0.875rem; font-size: 0.8125rem; font-weight: 600; box-shadow: var(--shadow-2xs);">Insomnia REST Client</span>
+        <span class="tech-tag" style="background: #ffffff; padding: 0.5rem 0.875rem; font-size: 0.8125rem; font-weight: 600; box-shadow: var(--shadow-2xs);">DBeaver Database Tool</span>
+        <span class="tech-tag" style="background: #ffffff; padding: 0.5rem 0.875rem; font-size: 0.8125rem; font-weight: 600; box-shadow: var(--shadow-2xs);">SonarQube</span>
+        <span class="tech-tag" style="background: #ffffff; padding: 0.5rem 0.875rem; font-size: 0.8125rem; font-weight: 600; box-shadow: var(--shadow-2xs);">Checkmarx SAST</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       5. TECHNICAL CONTRIBUTIONS (4 Structured Pillars)
+       ====================================================================== -->
+  <section class="py-section border-b-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">ENGINEERING IMPACT</span>
+        <h2 class="section-title">Technical Contributions</h2>
+        <p class="section-desc">
+          Rincian kontribusi rekayasa perangkat lunak backend yang saya kerjakan secara kolaboratif selama masa magang di BRI.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 1.5rem;">
+        <!-- Card A: Backend API Development -->
+        <div class="contrib-card">
+          <div>
+            <div class="contrib-header">
+              <div class="contrib-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              </div>
+              <div>
+                <span style="font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700; color: var(--brand-teal-dark);">PILAR A</span>
+                <h3 class="contrib-title">Backend API Development</h3>
+              </div>
+            </div>
+            <ul class="contrib-bullets">
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Pengembangan REST API:</strong> Mengembangkan endpoint RESTful untuk dashboard Human Capital, query informasi talenta, master data, dan struktur hierarki organisasi.</span>
+              </li>
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Validasi Payload:</strong> Mengimplementasikan validasi request data secara defensif pada HTTP layer untuk mencegah request payload yang tidak valid masuk ke core logic.</span>
+              </li>
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Response &amp; Error Handling:</strong> Menerapkan format envelope response JSON yang seragam (status, data, error) serta pemetaan kode status HTTP yang tepat.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card B: Authentication & Access Control -->
+        <div class="contrib-card">
+          <div>
+            <div class="contrib-header">
+              <div class="contrib-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <div>
+                <span style="font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700; color: var(--brand-teal-dark);">PILAR B</span>
+                <h3 class="contrib-title">Authentication &amp; Access Control</h3>
+              </div>
+            </div>
+            <ul class="contrib-bullets">
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Autentikasi JWT:</strong> Mengembangkan verifikasi token JWT untuk mengautentikasi sesi pengguna portal secara stateless dan aman.</span>
+              </li>
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Role-Based Access Control (RBAC):</strong> Membangun middleware otorisasi bertingkat untuk membatasi hak akses data antar peran pengguna (Administrator vs viewer).</span>
+              </li>
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Proteksi Akun:</strong> Mengembangkan penanganan validasi akun, pencegahan serangan brute-force dengan mekanisme account lockout sementara, dan proteksi credential.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card C: Database & Query Optimization -->
+        <div class="contrib-card">
+          <div>
+            <div class="contrib-header">
+              <div class="contrib-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </div>
+              <div>
+                <span style="font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700; color: var(--brand-teal-dark);">PILAR C</span>
+                <h3 class="contrib-title">Database &amp; Query Optimization</h3>
+              </div>
+            </div>
+            <ul class="contrib-bullets">
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>PostgreSQL Data Access:</strong> Mengembangkan layer akses data relasional menggunakan PostgreSQL dengan parameterized query untuk mencegah SQL Injection.</span>
+              </li>
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Analisis Query via DBeaver:</strong> Menganalisis execution plan query pencarian talenta menggunakan DBeaver untuk menambahkan indeks kolom yang tepat dan mengeliminasi sequential scan.</span>
+              </li>
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Separation of Concerns:</strong> Menerapkan pemisahan tanggung jawab yang tegas antara Controller, Usecase, dan Repository agar logika bisnis independen dari driver database.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card D: Code Quality & Security Testing -->
+        <div class="contrib-card">
+          <div>
+            <div class="contrib-header">
+              <div class="contrib-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <span style="font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700; color: var(--brand-teal-dark);">PILAR D</span>
+                <h3 class="contrib-title">Code Quality &amp; Security Testing</h3>
+              </div>
+            </div>
+            <ul class="contrib-bullets">
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>API Testing dengan Insomnia:</strong> Melakukan pengujian fungsional dan pengujian batas (boundary conditions) endpoint REST API secara konsisten menggunakan Insomnia.</span>
+              </li>
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Audit SonarQube &amp; Checkmarx:</strong> Berkolaborasi dalam pipeline CI/CD untuk memastikan kode bebas dari code smell, bugs, dan celah keamanan SAST (Static Application Security Testing).</span>
+              </li>
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Refactoring Kode:</strong> Merapikan struktur penamaan variabel, penanganan context timeout, dan modularisasi fungsi untuk meningkatkan maintainability sistem.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       6. BACKEND LAYERED ARCHITECTURE (Interactive Visual Flow)
+       ====================================================================== -->
+  <section class="py-section border-b-subtle bg-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">SYSTEM ARCHITECTURE</span>
+        <h2 class="section-title">Backend Architecture &amp; Layered Request Flow</h2>
+        <p class="section-desc">
+          Diagram di bawah menggambarkan alur data satu arah (unidirectional flow) dari pemanggilan klien hingga penyimpanan database berbasis Clean Architecture.
+        </p>
+      </div>
+
+      <div class="card" style="padding: 1.75rem; background: #ffffff; box-shadow: var(--shadow-xs);">
+        <!-- Flow Nodes -->
+        <div class="arch-diagram">
+          <!-- Node 1: Client -->
+          <div class="arch-node">
+            <div>
+              <div class="arch-node-tag">LAYER 1</div>
+              <h3 class="arch-node-title">Client / Frontend</h3>
+              <p class="arch-node-desc">Portal web pengguna mengirimkan HTTP request dengan header Bearer JWT.</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.625rem; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+              HTTPS / JSON
+            </div>
+          </div>
+
+          <!-- Node 2: Controller -->
+          <div class="arch-node active-layer">
+            <div>
+              <div class="arch-node-tag">LAYER 2</div>
+              <h3 class="arch-node-title">Controller / Handler</h3>
+              <p class="arch-node-desc">Menerima HTTP request, memvalidasi JWT middleware, mem-parsing DTO, dan memanggil usecase.</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.625rem; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+              Golang (Gin)
+            </div>
+          </div>
+
+          <!-- Node 3: Usecase -->
+          <div class="arch-node active-layer">
+            <div>
+              <div class="arch-node-tag">LAYER 3</div>
+              <h3 class="arch-node-title">Usecase (Domain Logic)</h3>
+              <p class="arch-node-desc">Mengeksekusi aturan bisnis Human Capital, evaluasi hak akses, dan agregasi data.</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.625rem; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+              Pure Business Rules
+            </div>
+          </div>
+
+          <!-- Node 4: Repository -->
+          <div class="arch-node active-layer">
+            <div>
+              <div class="arch-node-tag">LAYER 4</div>
+              <h3 class="arch-node-title">Repository Layer</h3>
+              <p class="arch-node-desc">Mengabstraksi akses data lewat interface, menyusun parameterized SQL query, dan mapping entity.</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.625rem; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+              Interface Contract
+            </div>
+          </div>
+
+          <!-- Node 5: PostgreSQL -->
+          <div class="arch-node">
+            <div>
+              <div class="arch-node-tag">LAYER 5</div>
+              <h3 class="arch-node-title">PostgreSQL Database</h3>
+              <p class="arch-node-desc">Penyimpanan relasional dengan index kolom teroptimasi untuk integritas data transaksi.</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.625rem; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+              Relational Storage
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.25rem; padding: 0.875rem 1.25rem; background: #f8fafc; border-radius: var(--radius-sm); border-left: 3px solid var(--brand-teal); font-size: 0.8125rem; color: #475569;">
+          <strong>Keterangan:</strong> Diagram di atas merupakan ilustrasi arsitektur backend berlapis (Clean Architecture) generik yang saya terapkan dalam penataan kode, bukan merupakan dokumentasi lengkap sistem internal perusahaan.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       7. TECHNICAL CASE STUDIES (Factual & Qualitative)
+       ====================================================================== -->
+  <section class="py-section border-b-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">DEEP DIVES</span>
+        <h2 class="section-title">Technical Case Studies</h2>
+        <p class="section-desc">
+          Pendekatan penyelesaian masalah teknis dan hasil kualitatif faktual selama pengembangan.
+        </p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+        <!-- Case 1 -->
+        <div class="card" style="padding: 1.5rem; background: #ffffff; border-color: var(--border-light); box-shadow: var(--shadow-xs);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+            <h3 style="font-size: 1.0625rem; font-weight: 700; color: #0f172a;">
+              Studi Kasus 1: Pemisahan Layer Kode &amp; Pengurangan Ketergantungan Erat (Decoupling)
+            </h3>
+            <span class="tech-tag" style="font-size: 0.6875rem;">Clean Architecture</span>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.65rem;">
+            <strong>Tantangan Teknis:</strong> Pada awal pengembangan modul dashboard, kode handler HTTP kerap bercampur dengan query basis data langsung, menyulitkan proses penulisan unit testing dan meningkatkan risiko duplikasi logika bisnis.
+          </p>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.65rem;">
+            <strong>Pendekatan Solusi:</strong> Menerapkan pola Clean Architecture dengan memisahkan kode menjadi lapisan Controller (Gin handler), Usecase (logika domain), dan Repository interface. Seluruh dependensi di-injeksi melalui konstruktor (Dependency Injection).
+          </p>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+            <strong>Hasil Faktual (Kualitatif):</strong> Struktur basis kode menjadi modular, memudahkan pengujian endpoint dengan mock repository, serta memastikan logika bisnis tidak terpengaruh saat skema database disesuaikan.
+          </p>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="card" style="padding: 1.5rem; background: #ffffff; border-color: var(--border-light); box-shadow: var(--shadow-xs);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+            <h3 style="font-size: 1.0625rem; font-weight: 700; color: #0f172a;">
+              Studi Kasus 2: Otorisasi Berlapis &amp; Keamanan Data Akses Talenta
+            </h3>
+            <span class="tech-tag" style="font-size: 0.6875rem;">JWT &amp; RBAC</span>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.65rem;">
+            <strong>Tantangan Teknis:</strong> Sistem Human Capital memuat data sensitif pegawai yang hanya boleh diakses atau diubah oleh peran (role) tertentu sesuai hierarki organisasi bank.
+          </p>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.65rem;">
+            <strong>Pendekatan Solusi:</strong> Mengembangkan middleware otentikasi JWT yang memvalidasi masa berlaku token dan mengekstrak claim peran pengguna pada setiap request. Menambahkan interceptor RBAC yang secara otomatis menolak akses jika role tidak memenuhi syarat izin endpoint.
+          </p>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+            <strong>Hasil Faktual (Kualitatif):</strong> Pengelolaan hak akses data talenta terlindungi secara terpusat, meminimalkan kebocoran data antar departemen, dan mempermudah audit izin akses sistem.
+          </p>
+        </div>
+
+        <!-- Case 3 -->
+        <div class="card" style="padding: 1.5rem; background: #ffffff; border-color: var(--border-light); box-shadow: var(--shadow-xs);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+            <h3 style="font-size: 1.0625rem; font-weight: 700; color: #0f172a;">
+              Studi Kasus 3: Kepatuhan Standar Keamanan &amp; Audit SonarQube / Checkmarx
+            </h3>
+            <span class="tech-tag" style="font-size: 0.6875rem;">Code Quality &amp; SAST</span>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.65rem;">
+            <strong>Tantangan Teknis:</strong> Di lingkungan perbankan, setiap kode yang diajukan ke staging wajib lolos gate audit SonarQube untuk code smell dan Checkmarx untuk celah keamanan statis (vulnerability scanner).
+          </p>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.65rem;">
+            <strong>Pendekatan Solusi:</strong> Melakukan analisis mandiri pada hasil scan Checkmarx, memperbaiki potential memory leak pada handling context dan SQL connection, serta merapikan struktur penanganan error (no unhandled error returns).
+          </p>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+            <strong>Hasil Faktual (Kualitatif):</strong> Memenuhi standar quality gate yang ditetapkan tim enterprise architecture BRI dan menjaga kebersihan repositori dari celah keamanan mendasar.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       8. KEY TAKEAWAYS & NAVIGATION CTA
+       ====================================================================== -->
+  <section class="py-section bg-subtle">
+    <div class="container">
+      <!-- Key Takeaways & Lessons Learned -->
+      <div style="border-radius: var(--radius-lg); border: 1px solid #fef3c7; background: #fffbeb; padding: 1.5rem; margin-bottom: 2.5rem; box-shadow: var(--shadow-2xs);">
+        <h2 style="font-size: 1rem; font-weight: 700; color: #92400e; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span>Key Takeaways &amp; Engineering Mindset</span>
+        </h2>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem; color: #78350f; line-height: 1.6;">
+          <li>• <strong>Enterprise SDLC Standards:</strong> Memahami bahwa menulis kode di perbankan bukan sekadar membuat fitur berjalan, melainkan memastikan ketahanan, auditabilitas, dan kejelasan alur penanganan error.</li>
+          <li>• <strong>Defensive Backend Thinking:</strong> Setiap input dari klien harus divalidasi secara ketat sebelum diproses oleh database, serta context cancellation harus selalu ditangani untuk mencegah proses menggantung.</li>
+          <li>• <strong>Collaboration in Regulated Environments:</strong> Belajar berkoordinasi secara efektif antar tim frontend, DevOps, dan auditor keamanan perbankan.</li>
+        </ul>
+      </div>
+
+      <!-- Navigation CTA -->
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">
+        <a href="../index.html#projects" class="btn btn-secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          <span>Back to Home</span>
+        </a>
+
+        <a href="posm.html" class="btn btn-primary">
+          <span>Next Project: POSM Indocement</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       9. FOOTER
+       ====================================================================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-meta">
+        <span class="footer-copy">&copy; 2026 Rizky Noufal Hidayat. Built with Vanilla HTML, CSS, and JavaScript.</span>
+        <div class="footer-pills">
+          <span class="footer-pill">
+            <span class="footer-pill-dot"></span>
+            Vanilla Stack
+          </span>
+          <span class="footer-pill">Clean Architecture</span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html" class="footer-link">Home</a>
+        <a href="../about.html" class="footer-link">About</a>
+        <a href="../projects.html" class="footer-link">Projects</a>
+        <a href="../experience.html" class="footer-link">Experience</a>
+        <a href="../contact.html" class="footer-link">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

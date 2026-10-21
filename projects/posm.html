@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POSM Web: Sistem Monitoring &amp; Dokumentasi Instalasi POSM | Rizky Noufal Hidayat</title>
+  <meta name="description" content="Technical Case Study untuk POSM Web: Perancangan dan implementasi sistem dokumentasi dan monitoring instalasi POSM berbasis web responsif di PT Indocement Tunggal Prakarsa Tbk.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+
+  <!-- ======================================================================
+       1. NAVBAR
+       ====================================================================== -->
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <a href="../index.html" class="brand-avatar-link" aria-label="Rizky Noufal Hidayat">
+        <img src="../assets/images/profile.jpg" alt="Rizky Noufal Hidayat" class="brand-avatar-img">
+        <div class="brand-avatar-text">
+          <span class="brand-avatar-name">Rizky Noufal Hidayat</span>
+          <span class="brand-avatar-role">Junior Backend Developer</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../about.html" class="nav-link">About</a>
+        <a href="../projects.html" class="nav-link active">Projects</a>
+        <a href="../experience.html" class="nav-link">Experience</a>
+        <a href="../contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="../cv/Rizky-Noufal-Hidayat-CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="min-height: 36px; padding: 0.35rem 0.875rem; font-size: 0.75rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download CV</span>
+        </a>
+        <a href="../about.html" class="avatar-btn" aria-label="About Profile">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+      </div>
+
+      <button type="button" class="nav-toggle-btn" id="nav-toggle-btn" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <nav class="mobile-links">
+        <a href="../index.html" class="mobile-link">Home</a>
+        <a href="../about.html" class="mobile-link">About</a>
+        <a href="../projects.html" class="mobile-link active">Projects</a>
+        <a href="../experience.html" class="mobile-link">Experience</a>
+        <a href="../contact.html" class="mobile-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       2. HERO HEADER SECTION
+       ====================================================================== -->
+  <section class="py-section border-b-subtle hero-mesh-wrapper">
+    <div class="ambient-glow glow-teal" aria-hidden="true"></div>
+    <div class="ambient-glow glow-indigo" aria-hidden="true"></div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <div style="margin-bottom: 1.25rem;">
+        <a href="../index.html#projects" class="btn-link" style="font-size: 0.8125rem; font-family: var(--font-mono);">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          <span>Back to Home</span>
+        </a>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+        <span class="badge-pill badge-professional">Professional Internship</span>
+        <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-light);">
+          Agustus 2025 - Oktober 2025
+        </span>
+      </div>
+
+      <h1 style="font-size: 2.25rem; font-weight: 900; color: #0f172a; line-height: 1.25; letter-spacing: -0.025em; max-width: 950px;">
+        POSM Web: Sistem Monitoring &amp; Dokumentasi Instalasi POSM
+      </h1>
+      <p style="font-size: 1.25rem; font-weight: 700; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+        PT Indocement Tunggal Prakarsa Tbk.
+      </p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; font-size: 0.8125rem; font-family: var(--font-mono); color: var(--text-muted);">
+        <div style="background: rgba(255,255,255,0.85); padding: 0.4rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light); box-shadow: var(--shadow-2xs);">
+          Role: <strong style="color: #0f172a;">Software Engineer Intern</strong>
+        </div>
+        <div style="background: rgba(255,255,255,0.85); padding: 0.4rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light); box-shadow: var(--shadow-2xs);">
+          Domain: <strong style="color: #0f172a;">Retail Logistics &amp; Operational Supply Chain</strong>
+        </div>
+        <div style="background: rgba(255,255,255,0.85); padding: 0.4rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light); box-shadow: var(--shadow-2xs);">
+          Focus: <strong style="color: #0f172a;">PHP Native, MySQL, AJAX, Batch Workflow &amp; RBAC</strong>
+        </div>
+      </div>
+
+      <p style="margin-top: 1.25rem; color: var(--text-muted); line-height: 1.7; font-size: 1rem; max-width: 880px;">
+        Aplikasi web operasional terpusat yang dikembangkan untuk PT Indocement Tunggal Prakarsa Tbk. guna mengelola proses dokumentasi pemasangan materi promosi (Point of Sales Materials / POSM) pada jaringan toko bahan bangunan mitra Semen Tiga Roda di seluruh wilayah distribusi.
+      </p>
+
+      <!-- Confidentiality Notice -->
+      <div class="confidentiality-notice" style="margin-top: 1.75rem; border-radius: var(--radius-md); border: 1px solid #bfdbfe; background: #eff6ff; padding: 1.25rem; max-width: 960px;">
+        <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <div>
+            <h2 style="font-size: 0.875rem; font-weight: 700; color: #1e40af; margin-bottom: 0.25rem;">
+              Pernyataan Kepatuhan &amp; Kerahasiaan Perusahaan (Confidentiality Notice)
+            </h2>
+            <p style="font-size: 0.8125rem; color: #1e3a8a; line-height: 1.6;">
+              Dokumentasi studi kasus ini disusun berdasarkan laporan magang resmi dengan tujuan evaluasi teknis rekrutmen. Seluruh informasi sensitif perusahaan, data toko riil, nama vendor rahasia, nomor kontrak, serta kredensial basis data internal telah disanitasi dan digeneralisasi sesuai prinsip perlindungan data perusahaan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       3. PRODUCTION APPLICATION INTERFACE GALLERY
+       ====================================================================== -->
+  <section class="py-section border-b-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">VERIFIED INTERFACE</span>
+        <h2 class="section-title">Production Application Interface</h2>
+        <p class="section-desc">
+          Dokumentasi visual antarmuka sistem POSM Web PT Indocement Tunggal Prakarsa Tbk. dengan tampilan awal default portal login.
+        </p>
+      </div>
+
+      <!-- 1. Default Display: Portal Login -->
+      <div class="card" style="overflow: hidden; border-color: var(--border-light); margin-bottom: 1.5rem; box-shadow: var(--shadow-sm); padding: 0;">
+        <div style="background: #1e3a8a; padding: 0.65rem 1.25rem; border-bottom: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 0.4rem;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #93c5fd; margin-left: 0.5rem;">posm.indocement.co.id/login.php</span>
+          </div>
+          <span style="font-size: 0.6875rem; font-family: var(--font-mono); color: #ffffff; font-weight: 700;">Tiga Roda Semen Indocement Authentication Gateway</span>
+        </div>
+        <img src="../assets/images/indocement/posm-login.png" alt="Portal Login Aplikasi POSM Web Indocement" class="previewable-img" data-preview-img="../assets/images/indocement/posm-login.png" data-caption="Portal Login Aplikasi POSM Web Indocement" style="width: 100%; height: auto; display: block;" loading="lazy">
+        <div style="padding: 1rem 1.25rem; background: #ffffff; border-top: 1px solid var(--border-light); font-size: 0.8125rem; color: var(--text-muted); line-height: 1.6;">
+          <strong>Tampilan Awal / Gateway Masuk (Default View):</strong> Halaman autentikasi portal POSM dengan latar biru korporat Indocement, sistem verifikasi password aman, penanganan sesi pengguna, dan pembatasan otorisasi peran (RBAC).
+        </div>
+      </div>
+
+      <!-- 2-Column Grid: Dashboard BI & Detail Batch Toko -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 1.5rem;">
+        <!-- Card Left: Business Intelligence Dashboard -->
+        <div class="card" style="overflow: hidden; border-color: var(--border-light); box-shadow: var(--shadow-xs); padding: 0;">
+          <div style="background: #f1f5f9; padding: 0.65rem 1rem; border-bottom: 1px solid var(--border-light); display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #475569; font-weight: 700;">Business Intelligence Dashboard</span>
+            <span class="badge-pill" style="font-size: 0.625rem; padding: 0.15rem 0.5rem;">Operational Analytics</span>
+          </div>
+          <img src="../assets/images/indocement/posm-dashboard.jpg" alt="Business Intelligence Dashboard POSM Indocement" class="previewable-img" data-preview-img="../assets/images/indocement/posm-dashboard.jpg" data-caption="Business Intelligence Dashboard POSM Indocement" style="width: 100%; height: auto; display: block;" loading="lazy">
+          <div style="padding: 1rem; background: #ffffff; border-top: 1px solid var(--border-light); font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5;">
+            <strong>Dashboard Analitik:</strong> Pemantauan metrik operasional terpusat meliputi kartu Batch Aktif, Belum Dimulai, Total Toko, Total Vendor, Selesai, dan grafik tren realisasi penyelesaian instalasi per area.
+          </div>
+        </div>
+
+        <!-- Card Right: Detail Pemasangan Batch Toko -->
+        <div class="card" style="overflow: hidden; border-color: var(--border-light); box-shadow: var(--shadow-xs); padding: 0;">
+          <div style="background: #f1f5f9; padding: 0.65rem 1rem; border-bottom: 1px solid var(--border-light); display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #475569; font-weight: 700;">Batch Instalasi Store Branding (Toko Detail)</span>
+            <span class="badge-pill" style="font-size: 0.625rem; padding: 0.15rem 0.5rem;">Field Proof &amp; PDF Docs</span>
+          </div>
+          <img src="../assets/images/indocement/posm-batch-detail.jpg" alt="Detail Pemasangan Toko Indah Makmur BGR004 POSM Indocement" class="previewable-img" data-preview-img="../assets/images/indocement/posm-batch-detail.jpg" data-caption="Detail Pemasangan Toko Indah Makmur BGR004 POSM Indocement" style="width: 100%; height: auto; display: block;" loading="lazy">
+          <div style="padding: 1rem; background: #ffffff; border-top: 1px solid var(--border-light); font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5;">
+            <strong>Verifikasi Bukti Lapangan:</strong> Antarmuka verifikasi pemasangan toko dengan preview bukti foto bertahap (Sebelum, Proses, Akhir), lampiran dokumen PDF surat tugas/izin reklame, dan riwayat catatan audit.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       4. PROBLEM STATEMENT & BACKGROUND
+       ====================================================================== -->
+  <section class="py-section border-b-subtle bg-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">PROBLEM STATEMENT</span>
+        <h2 class="section-title">Tantangan Pengelolaan Material Promosi Fisik</h2>
+        <p class="section-desc">
+          Kendala operasional di lapangan yang dihadapi tim marketing dan logistik sebelum sistem web diimplementasikan.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem;">
+        <div class="card" style="background: #ffffff; padding: 1.5rem; box-shadow: var(--shadow-xs);">
+          <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.75rem;">
+            <div style="width: 36px; height: 36px; border-radius: var(--radius-sm); background: #fee2e2; display: flex; align-items: center; justify-content: center; color: #b91c1c;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+            </div>
+            <h3 style="font-size: 1rem; font-weight: 700; color: #0f172a;">Pencatatan Terfragmentasi (Spreadsheet)</h3>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+            Pengelolaan ribuan toko ritel mitra dan penugasan vendor pihak ketiga sebelumnya mengandalkan spreadsheet terpisah, memicu duplikasi data dan ketidaksinkronan status progres.
+          </p>
+        </div>
+
+        <div class="card" style="background: #ffffff; padding: 1.5rem; box-shadow: var(--shadow-xs);">
+          <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.75rem;">
+            <div style="width: 36px; height: 36px; border-radius: var(--radius-sm); background: #fef3c7; display: flex; align-items: center; justify-content: center; color: #b45309;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            </div>
+            <h3 style="font-size: 1rem; font-weight: 700; color: #0f172a;">Validasi Bukti Lapangan yang Lambat</h3>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+            Bukti foto pengerjaan tercecer di aplikasi pesan instan tanpa tahapan terstruktur. Koordinator kesulitan mengonfirmasi keaslian kondisi sebelum, saat pengerjaan, dan hasil akhir.
+          </p>
+        </div>
+
+        <div class="card" style="background: #ffffff; padding: 1.5rem; box-shadow: var(--shadow-xs);">
+          <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.75rem;">
+            <div style="width: 36px; height: 36px; border-radius: var(--radius-sm); background: #e0f2fe; display: flex; align-items: center; justify-content: center; color: #0369a1;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 style="font-size: 1rem; font-weight: 700; color: #0f172a;">Risiko Denda Pajak Reklame</h3>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+            Pemasangan spanduk dan plang toko luar ruang wajib mematuhi pajak daerah. Tanpa pengawasan jatuh tempo otomatis, perusahaan berisiko terkena sanksi administratif dan penyegelan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       5. TECHNICAL STACK & TOOLS
+       ====================================================================== -->
+  <section class="py-section border-b-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">TECH ARSENAL</span>
+        <h2 class="section-title">Teknologi yang Digunakan</h2>
+        <p class="section-desc">
+          Teknologi fondasi, basis data, manipulasi berkas, dan tooling version control yang digunakan dalam proyek.
+        </p>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+        <span class="tech-tag" style="background: #ffffff; padding: 0.5rem 0.875rem; font-size: 0.8125rem; font-weight: 600; box-shadow: var(--shadow-2xs);">PHP Native (Backend Core)</span>
+        <span class="tech-tag" style="background: #ffffff; padding: 0.5rem 0.875rem; font-size: 0.8125rem; font-weight: 600; box-shadow: var(--shadow-2xs);">MySQL (Relational Database)</span>
+        <span class="tech-tag" style="background: #ffffff; padding: 0.5rem 0.875rem; font-size: 0.8125rem; font-weight: 600; box-shadow: var(--shadow-2xs);">HTML5 &amp; CSS3 (Responsive UI)</span>
+        <span class="tech-tag" style="background: #ffffff; padding: 0.5rem 0.875rem; font-size: 0.8125rem; font-weight: 600; box-shadow: var(--shadow-2xs);">JavaScript (ES6+)</span>
+        <span class="tech-tag" style="background: #ffffff; padding: 0.5rem 0.875rem; font-size: 0.8125rem; font-weight: 600; box-shadow: var(--shadow-2xs);">AJAX (Asynchronous Uploads)</span>
+        <span class="tech-tag" style="background: #ffffff; padding: 0.5rem 0.875rem; font-size: 0.8125rem; font-weight: 600; box-shadow: var(--shadow-2xs);">Git &amp; GitHub</span>
+        <span class="tech-tag" style="background: #ffffff; padding: 0.5rem 0.875rem; font-size: 0.8125rem; font-weight: 600; box-shadow: var(--shadow-2xs);">Role-Based Access Control (RBAC)</span>
+        <span class="tech-tag" style="background: #ffffff; padding: 0.5rem 0.875rem; font-size: 0.8125rem; font-weight: 600; box-shadow: var(--shadow-2xs);">PDF &amp; Image Storage Pipeline</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       6. SYSTEM ARCHITECTURE & OPERATIONAL WORKFLOW
+       ====================================================================== -->
+  <section class="py-section border-b-subtle bg-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">SYSTEM ARCHITECTURE</span>
+        <h2 class="section-title">Alur Kerja Sistem dari Pembuatan Batch hingga Selesai</h2>
+        <p class="section-desc">
+          Diagram tahapan operasional yang menghubungkan peran Administrator Pusat, Koordinator Wilayah, dan Vendor Lapangan.
+        </p>
+      </div>
+
+      <div class="card" style="padding: 1.75rem; background: #ffffff; box-shadow: var(--shadow-xs);">
+        <div class="arch-diagram">
+          <div class="arch-node">
+            <div>
+              <div class="arch-node-tag">TAHAP 1</div>
+              <h3 class="arch-node-title">Inisiasi Batch</h3>
+              <p class="arch-node-desc">Admin membuat batch baru, memilih wilayah kerja, menetapkan target waktu, dan memasukkan daftar toko.</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.625rem; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+              Admin Role
+            </div>
+          </div>
+
+          <div class="arch-node">
+            <div>
+              <div class="arch-node-tag">TAHAP 2</div>
+              <h3 class="arch-node-title">Penugasan Vendor</h3>
+              <p class="arch-node-desc">Koordinator Wilayah menugaskan mitra vendor lapangan yang bertanggung jawab atas eksekusi batch toko.</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.625rem; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+              Coordinator Role
+            </div>
+          </div>
+
+          <div class="arch-node active-layer">
+            <div>
+              <div class="arch-node-tag">TAHAP 3</div>
+              <h3 class="arch-node-title">Instalasi Lapangan</h3>
+              <p class="arch-node-desc">Vendor mendatangi toko, memasang material promosi, dan mengunggah foto sebelum dan saat proses.</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.625rem; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+              Vendor Field Role
+            </div>
+          </div>
+
+          <div class="arch-node">
+            <div>
+              <div class="arch-node-tag">TAHAP 4</div>
+              <h3 class="arch-node-title">Upload Bukti &amp; PDF</h3>
+              <p class="arch-node-desc">Vendor melengkapi foto hasil akhir dan mengunggah pindaian dokumen surat jalan serta tanda terima.</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.625rem; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+              AJAX Upload Pipeline
+            </div>
+          </div>
+
+          <div class="arch-node">
+            <div>
+              <div class="arch-node-tag">TAHAP 5</div>
+              <h3 class="arch-node-title">Validasi &amp; Status DONE</h3>
+              <p class="arch-node-desc">Koordinator memeriksa kelengkapan berkas, menyetujui hasil pengerjaan, dan status toko berubah menjadi Selesai.</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.625rem; color: var(--brand-teal-dark); margin-top: 0.5rem;">
+              Audit &amp; Archival
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       7. MY CONTRIBUTIONS (4 Structured Pillars)
+       ====================================================================== -->
+  <section class="py-section border-b-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">ENGINEERING IMPACT</span>
+        <h2 class="section-title">Kontribusi Teknis Saya</h2>
+        <p class="section-desc">
+          Rincian kontribusi rekayasa perangkat lunak yang saya kerjakan secara langsung sesuai laporan magang resmi.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 1.5rem;">
+        <!-- Pilar A: Manajemen Batch & Toko -->
+        <div class="contrib-card">
+          <div>
+            <div class="contrib-header">
+              <div class="contrib-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              </div>
+              <div>
+                <span style="font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700; color: var(--brand-teal-dark);">PILAR 1</span>
+                <h3 class="contrib-title">Manajemen Batch &amp; Master Toko</h3>
+              </div>
+            </div>
+            <ul class="contrib-bullets">
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Modul Pembuatan Batch Baru:</strong> Mengembangkan formulir inisiasi batch dengan penomoran unik, pembagian area geografis, dan target tenggat pengerjaan.</span>
+              </li>
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Relasi Database Master Toko:</strong> Membangun skema katalog toko mitra Semen Tiga Roda dengan kode unik, koordinat, dan relasi kepemilikan Job Order.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pilar B: Multi-Role Workflow & Penugasan Vendor -->
+        <div class="contrib-card">
+          <div>
+            <div class="contrib-header">
+              <div class="contrib-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div>
+                <span style="font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700; color: var(--brand-teal-dark);">PILAR 2</span>
+                <h3 class="contrib-title">Multi-Role RBAC &amp; Penugasan Vendor</h3>
+              </div>
+            </div>
+            <ul class="contrib-bullets">
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Role-Based Access Control:</strong> Menerapkan pembatasan wewenang menu dan data berbasis session PHP (Admin Pusat, Koordinator Wilayah, Vendor Rekanan).</span>
+              </li>
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Validasi Status Berjenjang:</strong> Menyusun alur status toko: Belum Dimulai, Sedang Dikerjakan, Menunggu Review, hingga Selesai (DONE).</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pilar C: Dokumentasi Foto 3 Tahap & Dokumen PDF -->
+        <div class="contrib-card">
+          <div>
+            <div class="contrib-header">
+              <div class="contrib-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              </div>
+              <div>
+                <span style="font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700; color: var(--brand-teal-dark);">PILAR 3</span>
+                <h3 class="contrib-title">Dokumentasi Foto 3 Tahap via AJAX</h3>
+              </div>
+            </div>
+            <ul class="contrib-bullets">
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Verifikasi Foto Bertahap:</strong> Skema penyimpanan foto instalasi yang mewajibkan vendor mengunggah 3 foto: Sebelum, Saat Pemasangan, dan Hasil Akhir.</span>
+              </li>
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Unggah Asinkron Tanpa Reload:</strong> Menggunakan AJAX Fetch API dan FormData untuk mengunggah foto dan lampiran PDF tanpa memuat ulang layar.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pilar D: Notifikasi Pajak Reklame & Histori -->
+        <div class="contrib-card">
+          <div>
+            <div class="contrib-header">
+              <div class="contrib-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              </div>
+              <div>
+                <span style="font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700; color: var(--brand-teal-dark);">PILAR 4</span>
+                <h3 class="contrib-title">Monitoring Pajak Reklame &amp; Audit Trail</h3>
+              </div>
+            </div>
+            <ul class="contrib-bullets">
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Peringatan Kedaluwarsa Izin:</strong> Menambahkan kalkulasi tanggal jatuh tempo pajak reklame untuk memberikan alert visual sebelum masa berlaku habis.</span>
+              </li>
+              <li class="contrib-bullet">
+                <svg class="contrib-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Log Riwayat Pekerjaan:</strong> Pencatatan jejak audit (audit trail) dari tanggal registrasi, penugasan vendor, hingga persetujuan verifikasi.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       8. ENGINEERING METRICS & IMPACT
+       ====================================================================== -->
+  <section class="py-section border-b-subtle bg-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">METRICS &amp; IMPACT</span>
+        <h2 class="section-title">Dampak Operasional &amp; Efisiensi Sistem</h2>
+        <p class="section-desc">
+          Perubahan nyata yang dirasakan tim operasional pemasaran dan logistik PT Indocement Tunggal Prakarsa Tbk.
+        </p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-box">
+          <span class="stat-val">100%</span>
+          <span class="stat-lbl">Digitalisasi Tracking Pemasangan</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val">3-Stage</span>
+          <span class="stat-lbl">Validasi Foto Sebelum, Proses &amp; Akhir</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val">0</span>
+          <span class="stat-lbl">Kehilangan Dokumen Bukti Fisik</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val">Multi-Area</span>
+          <span class="stat-lbl">Batch Manajemen Lintas Wilayah</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       9. LESSONS LEARNED & ENGINEERING TAKEAWAYS
+       ====================================================================== -->
+  <section class="py-section border-b-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">REFLECTION &amp; TAKEAWAYS</span>
+        <h2 class="section-title">Pembelajaran Rekayasa Sistem</h2>
+        <p class="section-desc">
+          Wawasan berharga yang diperoleh dari pengembangan sistem operasional lapangan berskala industri.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem;">
+        <div class="card" style="padding: 1.5rem; background: #ffffff; box-shadow: var(--shadow-xs);">
+          <h3 style="font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">
+            Ketahanan Jaringan di Lokasi Lapangan
+          </h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+            Kondisi sinyal seluler vendor di area toko terpencil kerap tidak stabil. Pengunggahan berkas via AJAX dan penanganan error timeout mencegah vendor mengulang pengisian formulir dari awal.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 1.5rem; background: #ffffff; box-shadow: var(--shadow-xs);">
+          <h3 style="font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">
+            Kesederhanaan Antarmuka bagi Pengguna Akhir
+          </h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+            Pengguna di lapangan membutuhkan alur kerja yang ringkas. Meminimalkan jumlah langkah pada form mobile terbukti meningkatkan kepatuhan pengunggahan bukti pengerjaan secara signifikan.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 1.5rem; background: #ffffff; box-shadow: var(--shadow-xs);">
+          <h3 style="font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">
+            Integritas Data dan Jejak Audit
+          </h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
+            Dalam rantai pasok dengan pihak ketiga, transparansi status adalah kunci. Setiap perubahan status yang tercatat dalam log audit menciptakan akuntabilitas penuh antara perusahaan dan vendor.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       10. NAVIGATION CTA
+       ====================================================================== -->
+  <section class="py-section bg-subtle">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">
+        <a href="../index.html#projects" class="btn btn-secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          <span>Back to Home</span>
+        </a>
+
+        <a href="judolscan.html" class="btn btn-primary">
+          <span>Next Project: JudolScan - Final Projects Academic</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       11. FOOTER
+       ====================================================================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-meta">
+        <span class="footer-copy">&copy; 2026 Rizky Noufal Hidayat. Built with Semantic HTML, Vanilla CSS &amp; JS.</span>
+        <div class="footer-pills">
+          <span class="footer-pill">
+            <span class="footer-pill-dot"></span>
+            Vanilla Stack
+          </span>
+          <span class="footer-pill">Clean Architecture</span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html" class="footer-link">Home</a>
+        <a href="../about.html" class="footer-link">About</a>
+        <a href="../projects.html" class="footer-link">Projects</a>
+        <a href="../experience.html" class="footer-link">Experience</a>
+        <a href="../contact.html" class="footer-link">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

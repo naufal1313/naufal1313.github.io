@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rizky Noufal Hidayat | Software Engineer (Backend & AI Integrations)</title>
+  <meta name="description"
+    content="Personal portfolio of Rizky Noufal Hidayat, Software Engineer specializing in Golang, high-performance REST APIs, relational database optimization, and AI integration.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body>
+
+  <!-- ======================================================================
+       1. NAVBAR
+       ====================================================================== -->
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <!-- Left: Brand Profile Avatar & Name -->
+      <a href="#hero" class="brand-avatar-link" aria-label="Rizky Noufal Hidayat">
+        <img src="assets/images/profile.jpg" alt="Rizky Noufal Hidayat" class="brand-avatar-img">
+        <div class="brand-avatar-text">
+          <span class="brand-avatar-name">Rizky Noufal Hidayat</span>
+          <span class="brand-avatar-role">Junior Backend Developer</span>
+        </div>
+      </a>
+
+      <!-- Center: In-Page Navigation Links -->
+      <nav class="nav-links">
+        <a href="#hero" class="nav-link active" data-i18n="navHome">Home</a>
+        <a href="#about" class="nav-link" data-i18n="navAbout">About</a>
+        <a href="#experience" class="nav-link" data-i18n="navExperience">Experience</a>
+        <a href="#projects" class="nav-link" data-i18n="navProjects">Projects</a>
+        <a href="#skills" class="nav-link" data-i18n="navSkills">Skills</a>
+        <a href="#education" class="nav-link" data-i18n="navEducation">Education</a>
+        <a href="#contact" class="nav-link" data-i18n="navContact">Contact</a>
+      </nav>
+
+      <!-- Right: Action Buttons & Language Switcher -->
+      <div class="nav-actions">
+        <!-- Bilingual Language Switcher -->
+        <div class="lang-switcher" aria-label="Language Selector">
+          <button type="button" class="lang-btn" id="lang-btn-id" title="Bahasa Indonesia">ID</button>
+          <button type="button" class="lang-btn active" id="lang-btn-en" title="English">EN</button>
+        </div>
+
+        <a href="cv/Rizky-Noufal-Hidayat-CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"
+          style="min-height: 36px; padding: 0.35rem 0.875rem; font-size: 0.75rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          <span data-i18n="downloadCvBtn">Download CV</span>
+        </a>
+        <a href="#about" class="avatar-btn" aria-label="About Profile">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button type="button" class="nav-toggle-btn" id="nav-toggle-btn" aria-label="Toggle mobile menu"
+        aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-menu" id="mobile-menu">
+      <nav class="mobile-links">
+        <a href="#hero" class="mobile-link active" data-i18n="navHome">Home</a>
+        <a href="#about" class="mobile-link" data-i18n="navAbout">About</a>
+        <a href="#experience" class="mobile-link" data-i18n="navExperience">Experience</a>
+        <a href="#projects" class="mobile-link" data-i18n="navProjects">Projects</a>
+        <a href="#skills" class="mobile-link" data-i18n="navSkills">Skills</a>
+        <a href="#education" class="mobile-link" data-i18n="navEducation">Education</a>
+        <a href="#contact" class="mobile-link" data-i18n="navContact">Contact</a>
+        <div
+          style="margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid var(--border-light); display: flex; flex-direction: column; gap: 0.5rem;">
+          <!-- Mobile Language Switcher -->
+          <div class="lang-switcher" style="justify-content: center;" aria-label="Language Selector">
+            <button type="button" class="lang-btn" id="lang-btn-id-mobile" title="Bahasa Indonesia">ID</button>
+            <button type="button" class="lang-btn active" id="lang-btn-en-mobile" title="English">EN</button>
+          </div>
+          <a href="cv/Rizky-Noufal-Hidayat-CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
+            style="width: 100%;">
+            <span data-i18n="downloadCvPdfBtn">Download CV (PDF)</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       1. HERO SECTION
+       ====================================================================== -->
+  <section class="py-section border-b-subtle hero-mesh-wrapper" id="hero">
+    <div class="ambient-glow glow-teal" aria-hidden="true"></div>
+    <div class="ambient-glow glow-indigo" aria-hidden="true"></div>
+    <div class="container hero-grid" style="position: relative; z-index: 1;">
+      <!-- Left: Identity & CTA -->
+      <div>
+        <p class="hero-greeting" data-i18n="heroGreeting">Hi, I am</p>
+        <h1 class="hero-name">Rizky Noufal Hidayat</h1>
+
+        <p class="hero-subtitle">
+          <span class="typewriter-text" id="typewriter-role">Software Engineer | Backend &amp; Distributed
+            Systems</span><span class="typewriter-cursor">|</span>
+        </p>
+
+        <p class="hero-desc" data-i18n="heroDesc">
+          With a strong foundation in Computer Science, I am passionate about building scalable backend systems,
+          integrating AI solutions, and designing high-performance RESTful APIs.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" />
+            </svg>
+            <span data-i18n="viewProjectsBtn">View Projects</span>
+          </a>
+
+          <a href="cv/Rizky-Noufal-Hidayat-CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
+            <span data-i18n="downloadCvBtn">Download CV</span>
+          </a>
+
+          <a href="#contact" class="btn-link">
+            <span data-i18n="contactBtn">Contact Me</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Connect Row -->
+        <div class="connect-bar">
+          <span style="font-weight: 700; font-family: var(--font-mono); font-size: 0.8125rem;" data-i18n="connectLabel">CONNECT:</span>
+          <a href="https://github.com/naufal1313" target="_blank" rel="noopener noreferrer" class="connect-icon-btn"
+            aria-label="GitHub Profile" title="GitHub">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/rizky-noufal-hidayat-8367862a8" target="_blank" rel="noopener noreferrer"
+            class="connect-icon-btn" aria-label="LinkedIn Profile" title="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 0 0 1.64-1.64 1.64 1.64 0 0 0-1.64-1.64 1.64 1.64 0 0 0-1.64 1.64 1.64 1.64 0 0 0 1.64 1.64m1.39 9.74v-8.37H5.07v8.37h2.78z" />
+            </svg>
+          </a>
+          <span style="color: #cbd5e1;">|</span>
+          <div style="display: flex; align-items: center; gap: 0.35rem; font-weight: 600; color: #334155;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            <span data-i18n="heroLocation">Bogor / Jakarta, ID</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: developer.ts Live Code Card -->
+      <div>
+        <div class="code-card">
+          <div class="window-header">
+            <div class="window-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="window-tab">developer.go</div>
+            <div style="font-family: var(--font-mono); font-size: 0.6875rem; color: #0d9488; font-weight: 700;">GOLANG
+              BACKEND</div>
+          </div>
+
+          <div class="code-editor">
+            <table class="code-table">
+              <tbody id="code-table-body">
+                <tr>
+                  <td class="line-num">1</td>
+                  <td class="line-code"><span class="token-kw">package</span> main</td>
+                </tr>
+                <tr>
+                  <td class="line-num">2</td>
+                  <td class="line-code"><span class="token-kw">type</span> <span class="token-var">Developer</span>
+                    <span class="token-kw">struct</span> {</td>
+                </tr>
+                <tr>
+                  <td class="line-num">3</td>
+                  <td class="line-code"> <span class="token-key">Name</span> <span class="token-kw">string</span></td>
+                </tr>
+                <tr>
+                  <td class="line-num">4</td>
+                  <td class="line-code"> <span class="token-key">Role</span> <span class="token-kw">string</span></td>
+                </tr>
+                <tr>
+                  <td class="line-num">5</td>
+                  <td class="line-code"> <span class="token-key">Skills</span> []<span class="token-kw">string</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="line-num">6</td>
+                  <td class="line-code"> <span class="token-key">Focus</span> <span class="token-kw">string</span></td>
+                </tr>
+                <tr>
+                  <td class="line-num">7</td>
+                  <td class="line-code">}</td>
+                </tr>
+                <tr>
+                  <td class="line-num">8</td>
+                  <td class="line-code"><span class="token-var">dev</span> := <span class="token-var">Developer</span>{
+                  </td>
+                </tr>
+                <tr>
+                  <td class="line-num">9</td>
+                  <td class="line-code"> <span class="token-key">Name</span>: <span class="token-str">'Rizky Noufal
+                      Hidayat'</span>,</td>
+                </tr>
+                <tr>
+                  <td class="line-num">10</td>
+                  <td class="line-code"> <span class="token-key">Role</span>: <span class="token-str">'Junior Backend
+                      Developer'</span>,</td>
+                </tr>
+                <tr>
+                  <td class="line-num">11</td>
+                  <td class="line-code"> <span class="token-key">Skills</span>: []<span
+                      class="token-kw">string</span>{<span class="token-str">'Golang'</span>, <span
+                      class="token-str">'PostgreSQL'</span>, <span class="token-str">'APIs'</span>},</td>
+                </tr>
+                <tr>
+                  <td class="line-num">12</td>
+                  <td class="line-code"> <span class="token-key">Focus</span>: <span class="token-str">'Maintainability,
+                      Security &amp; Speed'</span>,</td>
+                </tr>
+                <tr>
+                  <td class="line-num">13</td>
+                  <td class="line-code">}</td>
+                </tr>
+                <tr>
+                  <td class="line-num">14</td>
+                  <td class="line-code"><span class="token-var">dev</span>.<span
+                      class="token-fn">BuildResilientBackends</span>()<span class="code-cursor"></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       2. ABOUT ME
+       ====================================================================== -->
+  <section id="about" class="py-section border-b-subtle bg-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow" data-i18n="aboutEyebrow">PROFILE &amp; BACKGROUND</span>
+        <h2 class="section-title" data-i18n="aboutTitle">About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left: Narrative -->
+        <div>
+          <p style="font-size: 0.9375rem; color: #334155; line-height: 1.7; margin-bottom: 1.25rem;" data-i18n="aboutP1">
+            I am a final-year Computer Science student at Universitas Pakuan with an academic GPA of 3.65, dedicated to backend engineering, high-throughput microservices, and AI integrations.
+          </p>
+
+          <p style="font-size: 0.9375rem; color: #334155; line-height: 1.7; margin-bottom: 1.25rem;" data-i18n="aboutP2">
+            For me, software engineering is never just about writing code that works on the surface. True engineering quality centers on maintainability, security, and execution speed: ensuring that software remains effortless for teams to extend and debug, resilient against vulnerabilities, and optimized for low latency under high operational traffic.
+          </p>
+
+          <p style="font-size: 0.9375rem; color: #334155; line-height: 1.7; margin-bottom: 1.5rem;" data-i18n="aboutP3">
+            Having engineered production backend services for enterprise environments at Bank Rakyat Indonesia (BRI) and Indocement, I build software using Clean Architecture, defensive validation, relational query indexing, and explicit error handling so engineering teams can scale systems reliably.
+          </p>
+        </div>
+
+        <!-- Right: Core Philosophy & Metrics -->
+        <div>
+          <div class="education-card" style="background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);">
+            <div class="education-header">
+              <span
+                style="font-size: 0.6875rem; font-family: var(--font-mono); font-weight: 700; color: var(--brand-teal-dark);" data-i18n="mindsetEyebrow">ENGINEERING
+                MINDSET</span>
+
+            </div>
+
+            <div>
+              <h3 style="font-size: 1.125rem; font-weight: 700; color: #0f172a;" data-i18n="mindsetTitle">Maintainability, Security &amp; Speed
+              </h3>
+              <p style="font-size: 0.8125rem; color: #475569; margin-top: 0.35rem; line-height: 1.6;" data-i18n="mindsetDesc">
+                Writing defensible, easily maintainable, and high-performance backend code. Prioritizing modular separation of concerns, strict input validation, database query tuning, and concurrency patterns that guarantee long-term operational resilience.
+              </p>
+            </div>
+
+            <div style="padding-top: 0.75rem; border-top: 1px solid var(--border-light);">
+              <span
+                style="font-size: 0.75rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 0.5rem;" data-i18n="coreCompetenciesLabel">Core
+                Competencies:</span>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                <span class="tech-tag" style="background: #ffffff;">Clean Architecture</span>
+                <span class="tech-tag" style="background: #ffffff;">Defensive API Security</span>
+                <span class="tech-tag" style="background: #ffffff;">Relational Query Tuning</span>
+                <span class="tech-tag" style="background: #ffffff;">Worker Pool Concurrency</span>
+                <span class="tech-tag" style="background: #ffffff;">Unit &amp; Integration Testing</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-box">
+              <span class="stat-val">2</span>
+              <span class="stat-lbl" data-i18n="stat1Label">Production Internships</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-val">3.65</span>
+              <span class="stat-lbl" data-i18n="stat2Label">Academic GPA</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-val">10+</span>
+              <span class="stat-lbl" data-i18n="stat3Label">REST Services Built</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-val">100%</span>
+              <span class="stat-lbl" data-i18n="stat4Label">Test Discipline</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       3. WORK EXPERIENCE
+       ====================================================================== -->
+  <section id="experience" class="py-section border-b-subtle bg-subtle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow" data-i18n="experienceEyebrow">CAREER MILESTONES</span>
+        <h2 class="section-title" data-i18n="experienceTitle">Work Experience</h2>
+        <p class="section-desc" data-i18n="experienceDesc">
+          Practical track record of writing production software in regulated enterprise industries and supply chain operations.
+        </p>
+      </div>
+
+      <div class="timeline-list">
+        <!-- Entry 1: BRI -->
+        <div class="timeline-item">
+          <div class="timeline-marker teal"></div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <span class="sector-tag" data-i18n="expBriSector">BANKING • ENTERPRISE HC</span>
+                <h3 class="timeline-role" style="margin-top: 0.25rem;" data-i18n="expBriRole">Backend Developer</h3>
+                <p class="timeline-company">PT Bank Rakyat Indonesia (Persero) Tbk.</p>
+              </div>
+
+              <div>
+                <span class="timeline-period-pill" data-i18n="expBriPeriod">Aug 2024 - Dec 2024</span>
+                <span
+                  style="display: block; font-size: 0.6875rem; color: #64748b; margin-top: 0.25rem; text-align: right;" data-i18n="expBriLoc">
+                  Jakarta, Indonesia • Hybrid
+                </span>
+              </div>
+            </div>
+
+            <ul class="timeline-bullets">
+              <li class="timeline-bullet">
+                <svg class="timeline-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span data-i18n="expBriB1">Developed high-throughput RESTful endpoints using Golang and Chi Router for internal human capital microservices serving enterprise employees.</span>
+              </li>
+              <li class="timeline-bullet">
+                <svg class="timeline-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span data-i18n="expBriB2">Streamlined relational database queries across PostgreSQL tables, reducing average query execution times by ~35%.</span>
+              </li>
+              <li class="timeline-bullet">
+                <svg class="timeline-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span data-i18n="expBriB3">Integrated automated API unit tests achieving 85%+ code coverage across critical authentication and audit log modules.</span>
+              </li>
+            </ul>
+
+            <div
+              style="display: flex; flex-wrap: wrap; gap: 0.35rem; padding-top: 0.75rem; border-top: 1px solid var(--border-light);">
+              <span class="tech-tag" style="background: #ffffff;">Golang</span>
+              <span class="tech-tag" style="background: #ffffff;">Chi Router</span>
+              <span class="tech-tag" style="background: #ffffff;">PostgreSQL</span>
+              <span class="tech-tag" style="background: #ffffff;">Docker</span>
+              <span class="tech-tag" style="background: #ffffff;">SonarQube</span>
+              <span class="tech-tag" style="background: #ffffff;">Git</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entry 2: Indocement -->
+        <div class="timeline-item">
+          <div class="timeline-marker gray"></div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <span class="sector-tag" data-i18n="expIndoSector">MANUFACTURING • SALES DIVISION</span>
+                <h3 class="timeline-role" style="margin-top: 0.25rem;" data-i18n="expIndoRole">Software Engineer</h3>
+                <p class="timeline-company">PT Indocement Tunggal Prakarsa Tbk.</p>
+              </div>
+
+              <div>
+                <span class="timeline-period-pill" data-i18n="expIndoPeriod">Jan 2024 - May 2024</span>
+                <span
+                  style="display: block; font-size: 0.6875rem; color: #64748b; margin-top: 0.25rem; text-align: right;" data-i18n="expIndoLoc">
+                  Bogor, Indonesia • On-site
+                </span>
+              </div>
+            </div>
+
+            <ul class="timeline-bullets">
+              <li class="timeline-bullet">
+                <svg class="timeline-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span data-i18n="expIndoB1">Built backend management APIs for the POSM distribution platform coordinating item tracking across multiple regional supply depots.</span>
+              </li>
+              <li class="timeline-bullet">
+                <svg class="timeline-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span data-i18n="expIndoB2">Implemented secure JWT-based authentication and granular role-based permissions (RBAC) for depot warehouse supervisors and audit teams.</span>
+              </li>
+              <li class="timeline-bullet">
+                <svg class="timeline-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span data-i18n="expIndoB3">Collaborated with frontend engineers to standardize JSON API error response formats and maintained live Swagger/OpenAPI documentation.</span>
+              </li>
+            </ul>
+
+            <div
+              style="display: flex; flex-wrap: wrap; gap: 0.35rem; padding-top: 0.75rem; border-top: 1px solid var(--border-light);">
+              <span class="tech-tag" style="background: #ffffff;">PHP Native</span>
+              <span class="tech-tag" style="background: #ffffff;">MySQL</span>
+              <span class="tech-tag" style="background: #ffffff;">JavaScript</span>
+              <span class="tech-tag" style="background: #ffffff;">AJAX</span>
+              <span class="tech-tag" style="background: #ffffff;">REST API</span>
+              <span class="tech-tag" style="background: #ffffff;">Git</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entry 3: PT Kurnia Manunggal Sejahtera -->
+        <div class="timeline-item">
+          <div class="timeline-marker gray"></div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <span class="sector-tag" data-i18n="expKmsSector">MANUFACTURING • PRODUCTION</span>
+                <h3 class="timeline-role" style="margin-top: 0.25rem;" data-i18n="expKmsRole">Production Helper</h3>
+                <p class="timeline-company">PT Kurnia Manunggal Sejahtera.</p>
+              </div>
+
+              <div>
+                <span class="timeline-period-pill" data-i18n="expKmsPeriod">Feb 2021 - Apr 2021</span>
+                <span
+                  style="display: block; font-size: 0.6875rem; color: #64748b; margin-top: 0.25rem; text-align: right;" data-i18n="expKmsLoc">
+                  Bogor, Indonesia • On-site
+                </span>
+              </div>
+            </div>
+
+            <ul class="timeline-bullets">
+              <li class="timeline-bullet">
+                <svg class="timeline-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span data-i18n="expKmsB1">Responsible for packaging rail grab components and CVT covers in accordance with company quality standards.</span>
+              </li>
+              <li class="timeline-bullet">
+                <svg class="timeline-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span data-i18n="expKmsB2">Ensured accurate product quantities and secure packaging before distribution.</span>
+              </li>
+              <li class="timeline-bullet">
+                <svg class="timeline-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span data-i18n="expKmsB3">Maintained a high level of focus and attention to detail to achieve daily production department targets.</span>
+              </li>
+            </ul>
+
+            <div
+              style="display: flex; flex-wrap: wrap; gap: 0.35rem; padding-top: 0.75rem; border-top: 1px solid var(--border-light);">
+              <span class="tech-tag" style="background: #ffffff;" data-i18n="expKmsTag1">Quality Standards</span>
+              <span class="tech-tag" style="background: #ffffff;" data-i18n="expKmsTag2">Component Packaging</span>
+              <span class="tech-tag" style="background: #ffffff;" data-i18n="expKmsTag3">Production Target</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       4. SELECTED PROJECTS
+       ====================================================================== -->
+  <section id="projects" class="py-section border-b-subtle bg-white">
+    <div class="container">
+      <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2.5rem;">
+        <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 1rem;">
+          <div>
+            <span class="section-eyebrow" data-i18n="selectedProjectsEyebrow">ENGINEERING PORTFOLIO</span>
+            <h2 class="section-title" data-i18n="selectedProjectsTitle">Selected Projects</h2>
+            <p class="section-desc" data-i18n="selectedProjectsDesc">
+              Three flagship production and deep learning systems engineered for scalability, transactional integrity,
+              and maintainability.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Project Cards Grid -->
+      <div class="projects-grid">
+        <!-- Card 1: Demeter App (BRI) -->
+        <article class="project-card featured-star">
+          <div>
+            <div class="card-preview">
+              <span class="badge-pill badge-star" data-i18n="projBriBadge1">★ Star Featured Project</span>
+              <span class="badge-pill badge-professional card-preview-badge" data-i18n="projBriBadge2">Professional Experience</span>
+              <img src="assets/images/bri/demeter-login.png" alt="Demeter App BRI Sign In Portal"
+                class="card-preview-img previewable-img" data-preview-img="assets/images/bri/demeter-login.png"
+                data-caption="Demeter App BRI - Enterprise Human Capital Portal" loading="lazy">
+            </div>
+
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3 class="card-title"><a href="projects/hc-app.html">Demeter App - BRI</a></h3>
+                <a href="projects/hc-app.html" style="color: #94a3b8;" aria-label="Open Demeter App Case Study">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </a>
+              </div>
+
+              <p class="card-desc" data-i18n="projBriDesc">
+                Internal human capital management backend service handling employee lifecycle workflows, automated compliance logging, and enterprise reporting.
+              </p>
+
+              <div class="contribution-box">
+                <span class="contribution-label" data-i18n="projContribLabel">My Contribution:</span>
+                <p class="contribution-text" data-i18n="projBriContrib">
+                  Designed modular REST endpoints in Go with Chi Router, optimized relational queries reducing latency by ~35%, and wrote unit tests covering critical auth logic.
+                </p>
+              </div>
+
+              <div class="card-tech-row">
+                <span class="tech-tag">Golang</span>
+                <span class="tech-tag">Chi Router</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">SonarQube</span>
+                <span class="tech-tag">Unit Testing</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <a href="projects/hc-app.html" class="btn-link" style="font-size: 0.75rem;">
+              <span data-i18n="viewCaseStudy">View Case Study Details</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </a>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </div>
+        </article>
+
+        <!-- Card 2: POSM Web (Indocement) -->
+        <article class="project-card featured-star">
+          <div>
+            <div class="card-preview">
+              <span class="badge-pill badge-star" data-i18n="projIndoBadge1">★ Star Featured Project</span>
+              <span class="badge-pill badge-professional card-preview-badge" data-i18n="projIndoBadge2">Professional Experience</span>
+              <img src="assets/images/indocement/posm-login.png" alt="POSM Web Indocement Login Portal"
+                class="card-preview-img previewable-img" data-preview-img="assets/images/indocement/posm-login.png"
+                data-caption="POSM Web Indocement - Sistem Monitoring &amp; Dokumentasi Instalasi POSM" loading="lazy">
+            </div>
+
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3 class="card-title"><a href="projects/posm.html">POSM Web - Indocement</a></h3>
+                <a href="projects/posm.html" style="color: #94a3b8;" aria-label="Open POSM Web Case Study">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </a>
+              </div>
+
+              <p class="card-desc" data-i18n="projIndoDesc">
+                Web-based operational tracking system managing Point of Sales Materials (POSM) across retail partner stores.
+              </p>
+
+              <div class="contribution-box">
+                <span class="contribution-label" data-i18n="projContribLabel">My Contribution:</span>
+                <p class="contribution-text" data-i18n="projIndoContrib">
+                  Engineered multi-role batch workflows, asynchronous 3-stage photo uploads via AJAX, and automated tax expiry alerts.
+                </p>
+              </div>
+
+              <div class="card-tech-row">
+                <span class="tech-tag">PHP Native</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">AJAX</span>
+                <span class="tech-tag">Batch Workflow</span>
+                <span class="tech-tag">RBAC</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <a href="projects/posm.html" class="btn-link" style="font-size: 0.75rem;">
+              <span data-i18n="viewCaseStudy">View Case Study Details</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </a>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
+          </div>
+        </article>
+
+        <!-- Card 3: JudolScan - Final Projects Academic -->
+        <article class="project-card featured-star">
+          <div>
+            <div class="card-preview">
+              <span class="badge-pill badge-star" data-i18n="projJudolBadge1">★ Star Featured Project</span>
+              <span class="badge-pill badge-academic card-preview-badge" data-i18n="projJudolBadge2">Academic Project</span>
+              <img src="assets/images/judolscan/judolscan-dashboard.png" alt="JudolScan - Final Projects Academic"
+                class="card-preview-img previewable-img"
+                data-preview-img="assets/images/judolscan/judolscan-dashboard.png"
+                data-caption="JudolScan - Final Projects Academic" loading="lazy">
+            </div>
+
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3 class="card-title"><a href="projects/judolscan.html">JudolScan - Final Projects Academic</a></h3>
+                <a href="projects/judolscan.html" style="color: #94a3b8;" aria-label="Open JudolScan Case Study">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </a>
+              </div>
+
+              <p class="card-desc" data-i18n="projJudolDesc">
+                AI-powered moderation system detecting online gambling spam comments on YouTube using Hybrid AI (Bi-LSTM &amp; Rules).
+              </p>
+
+              <div class="contribution-box">
+                <span class="contribution-label" data-i18n="projContribLabel">My Contribution:</span>
+                <p class="contribution-text" data-i18n="projJudolContrib">
+                  Built Python Flask inference API, engineered YouTube Data API v3 ingestion, and integrated LIME XAI for transparent spam scoring.
+                </p>
+              </div>
+
+              <div class="card-tech-row">
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Python Flask</span>
+                <span class="tech-tag">Bi-LSTM</span>
+                <span class="tech-tag">LIME XAI</span>
+                <span class="tech-tag">YouTube API</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <a href="projects/judolscan.html" class="btn-link" style="font-size: 0.75rem;">
+              <span data-i18n="viewCaseStudy">View Case Study Details</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </a>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+          </div>
+        </article>
+      </div>
+
+      <!-- Collapsible Side Projects Section -->
+      <div class="side-projects-wrapper">
+        <button id="toggle-side-projects-btn" class="toggle-side-btn" aria-expanded="false"
+          aria-controls="side-projects-panel">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect width="7" height="7" x="3" y="3" rx="1" />
+            <rect width="7" height="7" x="14" y="3" rx="1" />
+            <rect width="7" height="7" x="14" y="14" rx="1" />
+            <rect width="7" height="7" x="3" y="14" rx="1" />
+          </svg>
+          <span class="toggle-text" data-i18n="viewMoreSideProjects">View More Projects (2 Side Projects)</span>
+          <svg class="toggle-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+
+        <div id="side-projects-panel" class="side-projects-panel">
+          <div class="side-projects-grid">
+            <!-- Side Project 1: Bangun Catat -->
+            <article class="project-card">
+              <div class="card-body">
+                <div class="card-title-row">
+                  <h3 class="card-title">Bangun Catat</h3>
+                  <span class="badge-pill" style="background: #f1f5f9; color: #475569; border-color: #cbd5e1;" data-i18n="sideProjectBadge">Side Project</span>
+                </div>
+                <p class="card-desc" data-i18n="sideBangunDesc">
+                  Mobile cashflow ledger and material inventory management application built for construction contractors and building supply small businesses.
+                </p>
+                <div class="card-tech-row" style="margin-top: 1rem;">
+                  <span class="tech-tag">Flutter</span>
+                  <span class="tech-tag">Dart</span>
+                  <span class="tech-tag">SQLite</span>
+                  <span class="tech-tag">Financial Ledger</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Side Project 2: Rental Mobil Web -->
+            <article class="project-card">
+              <div class="card-body">
+                <div class="card-title-row">
+                  <h3 class="card-title">Rental Mobil Web System</h3>
+                  <span class="badge-pill" style="background: #f1f5f9; color: #475569; border-color: #cbd5e1;" data-i18n="sideProjectBadge">Side Project</span>
+                </div>
+                <p class="card-desc" data-i18n="sideRentalDesc">
+                  Car rental fleet management and booking platform featuring automated duration calculations, vehicle availability checks, and PDF invoice generation.
+                </p>
+                <div class="card-tech-row" style="margin-top: 1rem;">
+                  <span class="tech-tag">PHP</span>
+                  <span class="tech-tag">MySQL</span>
+                  <span class="tech-tag">Bootstrap</span>
+                  <span class="tech-tag">PDF Reporting</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       5. ENGINEERING SKILL MATRIX
+       ====================================================================== -->
+  <section id="skills" class="py-section border-b-subtle bg-subtle">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow" data-i18n="skillsEyebrow">TECHNICAL CAPABILITIES</span>
+        <h2 class="section-title" data-i18n="skillsTitle">Engineering Skill Matrix</h2>
+        <p class="section-desc" data-i18n="skillsDesc">
+          Structured toolsets and frameworks used across production microservices, data architecture, and continuous
+          deployment workflows.
+        </p>
+      </div>
+
+      <div class="skill-matrix-grid">
+        <!-- 1. Backend & API Engineering -->
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap" style="background: #ecfeff; border-color: #a5f3fc; color: #0e7490;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4 17 10 11 4 5" />
+                <line x1="12" y1="19" x2="20" y2="19" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="skill-card-title" data-i18n="skill1Title">Backend &amp; API Engineering</h3>
+              <span class="skill-sub-badge" data-i18n="skill1Badge">Core Specialization • Production Grade</span>
+            </div>
+          </div>
+
+          <p class="skill-card-desc" data-i18n="skill1Desc">
+            High-throughput backend services and modular monoliths in Go with clean onion architecture, goroutine concurrency, worker pools, and predictable sentinel error handling.
+          </p>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.25rem;">
+            <span class="tech-tag">Golang</span>
+            <span class="tech-tag">Chi Router</span>
+            <span class="tech-tag">REST API Design</span>
+            <span class="tech-tag">Clean Architecture</span>
+            <span class="tech-tag">Dependency Injection</span>
+            <span class="tech-tag">Goroutine &amp; Channel Concurrency</span>
+            <span class="tech-tag">Worker Pool Pattern</span>
+            <span class="tech-tag">Custom Sentinel Errors</span>
+          </div>
+        </div>
+
+        <!-- 2. Database & Data Engineering -->
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+              </svg>
+            </div>
+            <h3 class="skill-card-title" data-i18n="skill2Title">Database &amp; Data Engineering</h3>
+          </div>
+
+          <p class="skill-card-desc" data-i18n="skill2Desc">
+            Relational modeling, indexing strategies, ACID transaction management, and query plan profiling.
+          </p>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Query Optimization &amp; EXPLAIN ANALYZE</span>
+            <span class="tech-tag">Database Indexing Strategy</span>
+            <span class="tech-tag">Relational Schema Design</span>
+            <span class="tech-tag">Database Migrations</span>
+            <span class="tech-tag">Transaction Management (ACID)</span>
+            <span class="tech-tag">DBeaver</span>
+          </div>
+        </div>
+
+        <!-- 3. Authentication & Application Security -->
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m21 2-2 2m-6 6 2-2 4 4-2 2-6-6" />
+                <circle cx="7.5" cy="16.5" r="5.5" />
+              </svg>
+            </div>
+            <h3 class="skill-card-title" data-i18n="skill3Title">Authentication &amp; Security</h3>
+          </div>
+
+          <p class="skill-card-desc" data-i18n="skill3Desc">
+            Enterprise identity, granular role-based permissions, defense-in-depth, and security audits.
+          </p>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+            <span class="tech-tag">JWT (JSON Web Token)</span>
+            <span class="tech-tag">Role-Based Access Control (RBAC)</span>
+            <span class="tech-tag">User Provisioning Workflow</span>
+            <span class="tech-tag">Account Lockout Mechanism</span>
+            <span class="tech-tag">Input Validation &amp; Sanitization</span>
+            <span class="tech-tag">Secure API Design</span>
+            <span class="tech-tag">SonarQube</span>
+            <span class="tech-tag">Checkmarx</span>
+          </div>
+        </div>
+
+        <!-- 4. Testing & Code Quality -->
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 11 12 14 22 4" />
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+              </svg>
+            </div>
+            <h3 class="skill-card-title" data-i18n="skill4Title">Testing &amp; Code Quality</h3>
+          </div>
+
+          <p class="skill-card-desc" data-i18n="skill4Desc">
+            Automated regression prevention through isolated mocks, test assertions, and static code quality gates.
+          </p>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+            <span class="tech-tag">Go Testing Package</span>
+            <span class="tech-tag">Testify Assertion</span>
+            <span class="tech-tag">pgxmock</span>
+            <span class="tech-tag">httptest</span>
+            <span class="tech-tag">Unit &amp; Integration Testing</span>
+            <span class="tech-tag">Mock Repository Pattern</span>
+            <span class="tech-tag">Test Coverage Analysis</span>
+            <span class="tech-tag">SonarQube &amp; Checkmarx Integration</span>
+          </div>
+        </div>
+
+        <!-- 5. DevOps & Observability -->
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="m16.5 9.4-9-5.19M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                <line x1="12" y1="22.08" x2="12" y2="12" />
+              </svg>
+            </div>
+            <h3 class="skill-card-title" data-i18n="skill5Title">DevOps &amp; Observability</h3>
+          </div>
+
+          <p class="skill-card-desc" data-i18n="skill5Desc">
+            Containerization, CI/CD runners, distributed tracing telemetry, and stress benchmarking.
+          </p>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+            <span class="tech-tag">Docker &amp; Containerization</span>
+            <span class="tech-tag">Git &amp; GitHub / Bitbucket</span>
+            <span class="tech-tag">Linux / Bash Shell</span>
+            <span class="tech-tag">OpenTelemetry (Traces &amp; Metrics)</span>
+            <span class="tech-tag">Distributed Tracing (Jaeger)</span>
+            <span class="tech-tag">Grafana &amp; Prometheus</span>
+            <span class="tech-tag">k6 Load Testing</span>
+            <span class="tech-tag">CI/CD Pipelines</span>
+            <span class="tech-tag">MinIO / S3 Storage</span>
+          </div>
+        </div>
+
+        <!-- 6. AI, Machine Learning & Data Integration -->
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect width="18" height="18" x="3" y="3" rx="2" />
+                <path d="M15 9h.01" />
+                <path d="M9 9h.01" />
+                <path d="M9 15h6" />
+              </svg>
+            </div>
+            <h3 class="skill-card-title" data-i18n="skill6Title">AI, ML &amp; Data Integration</h3>
+          </div>
+
+          <p class="skill-card-desc" data-i18n="skill6Desc">
+            Machine learning pipelines, text classification, and explainable AI interpretability (applied in JudolScan).
+          </p>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">TensorFlow / Keras</span>
+            <span class="tech-tag">Bi-LSTM (Bidirectional LSTM)</span>
+            <span class="tech-tag">Natural Language Processing (NLP)</span>
+            <span class="tech-tag">Text Classification Pipeline</span>
+            <span class="tech-tag">LIME XAI Interpretability</span>
+            <span class="tech-tag">YouTube Data API v3</span>
+            <span class="tech-tag">IndoBERT (Exploration)</span>
+          </div>
+        </div>
+
+        <!-- 7. Frontend & Developer Tools -->
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect width="18" height="18" x="3" y="3" rx="2" />
+                <path d="M3 9h18" />
+                <path d="M9 21V9" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="skill-card-title" data-i18n="skill7Title">Frontend &amp; Developer Tools</h3>
+              <span class="skill-sub-badge" data-i18n="skill7Badge">Supporting Stack • Cross-Functional</span>
+            </div>
+          </div>
+
+          <p class="skill-card-desc" data-i18n="skill7Desc">
+            Modern frontend interfaces, API testing utilities, and structured development environments for end-to-end integration.
+          </p>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">Tailwind CSS</span>
+            <span class="tech-tag">Semantic HTML &amp; CSS</span>
+            <span class="tech-tag">Insomnia</span>
+            <span class="tech-tag">VS Code / Antigravity</span>
+            <span class="tech-tag">Git Workflow</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       6. EDUCATION & CERTIFICATION
+       ====================================================================== -->
+  <section id="education" class="py-section border-b-subtle bg-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow" data-i18n="educationEyebrow">ACADEMIC &amp; CREDENTIALS</span>
+        <h2 class="section-title" data-i18n="educationTitle">Education &amp; Certification</h2>
+        <p class="section-desc" data-i18n="educationDesc">
+          Formal academic foundation in computer science, specialized technical coursework, and quality certification standards.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+        <!-- University Degree Card -->
+        <div class="education-card" style="padding: 1.75rem;">
+          <div class="education-header">
+            <span
+              style="font-size: 0.6875rem; font-family: var(--font-mono); font-weight: 700; color: var(--brand-teal-dark);" data-i18n="degreeBadge">HIGHER EDUCATION DEGREE</span>
+            <span class="badge-pill badge-professional">GPA 3.65 / 4.00</span>
+          </div>
+
+          <div
+            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-top: 0.25rem;">
+            <div>
+              <h3 style="font-size: 1.375rem; font-weight: 800; color: #0f172a;">Universitas Pakuan</h3>
+              <p style="font-size: 0.9375rem; color: #475569; margin-top: 0.25rem;" data-i18n="degreeTitle">
+                Bachelor of Computer Science (S-1 Ilmu Komputer)
+              </p>
+            </div>
+            <div style="text-align: right;">
+              <span class="badge-pill" style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1;" data-i18n="degreePeriod">Jun 2022 - Present</span>
+              <span style="display: block; font-size: 0.75rem; color: #64748b; margin-top: 0.25rem;" data-i18n="degreeLoc">Bogor, West Java</span>
+            </div>
+          </div>
+
+          <p style="font-size: 0.875rem; color: #475569; line-height: 1.6; margin-top: 1rem;" data-i18n="degreeDesc">
+            Specializing in backend system engineering, database management, and machine learning pipelines. Maintained a consistent academic record with a cumulative GPA of 3.65 while actively completing software engineering internships in the banking and manufacturing sectors.
+          </p>
+
+          <div style="padding-top: 1rem; margin-top: 1rem; border-top: 1px solid var(--border-light);">
+            <span
+              style="font-size: 0.75rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 0.5rem;" data-i18n="courseworkLabel">Specialized Coursework &amp; Research:</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+              <span class="tech-tag" style="background: #ffffff;">Database Systems &amp; Indexing</span>
+              <span class="tech-tag" style="background: #ffffff;">Algorithms &amp; Data Structures</span>
+              <span class="tech-tag" style="background: #ffffff;">Distributed Systems</span>
+              <span class="tech-tag" style="background: #ffffff;">Software Engineering &amp; Architecture</span>
+              <span class="tech-tag" style="background: #ffffff;">Natural Language Processing (NLP)</span>
+              <span class="tech-tag" style="background: #ffffff;">Deep Learning (Bi-LSTM &amp; XAI)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Professional Certifications Showcase -->
+        <div style="margin-top: 1rem;">
+          <div style="margin-bottom: 1.25rem;">
+            <span class="section-eyebrow" style="color: var(--brand-teal-dark);" data-i18n="certEyebrow">PROFESSIONAL CERTIFICATIONS</span>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-top: 0.25rem;" data-i18n="certSectionTitle">
+              Verified Credentials &amp; Specialized Competencies
+            </h3>
+            <p style="font-size: 0.8125rem; color: #64748b; margin-top: 0.25rem;" data-i18n="certSectionDesc">
+              Industry-recognized credentials in offensive AI security, agentic system architecture, AWS cloud foundation, and spec-driven engineering. Click on any certificate to view high-resolution verification.
+            </p>
+          </div>
+
+          <div class="cert-grid">
+            <!-- Cert 1: Introduction to Offensive Security with AI -->
+            <article class="cert-card">
+              <div class="cert-preview">
+                <img src="assets/images/certificates/offensive-security-ai.png" alt="Introduction to Offensive Security with Artificial Intelligence - RedTeam Leaders" class="previewable-img" data-preview-img="assets/images/certificates/offensive-security-ai.png" data-caption="Certificate of Completion: Introduction to Offensive Security with Artificial Intelligence (RedTeam Leaders)" loading="lazy">
+                <span class="cert-zoom-hint">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  <span data-i18n="certPreviewHint">Preview Certificate</span>
+                </span>
+              </div>
+              <div class="cert-body">
+                <div class="cert-meta-row">
+                  <span class="badge-pill" style="background: #fef2f2; color: #dc2626; border-color: #fecaca;">RedTeam Leaders</span>
+                  <span class="cert-date">Issued Oct 14, 2026</span>
+                </div>
+                <h4 class="cert-title" data-i18n="cert1Title">Introduction to Offensive Security with Artificial Intelligence</h4>
+                <p class="cert-desc" data-i18n="cert1Desc">
+                  A completion certificate validating foundational knowledge at the intersection of cybersecurity and artificial intelligence. This course covers the principles and practical applications of leveraging AI technologies within offensive security and red teaming operations.
+                </p>
+                <div class="cert-tags">
+                  <span class="tech-tag">Offensive Security</span>
+                  <span class="tech-tag">Red Teaming</span>
+                  <span class="tech-tag">AI in Cybersecurity</span>
+                  <span class="tech-tag">Joas A. Santos</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Cert 2: IBM SkillsBuild - Intelligent by Design: Build an AI Agent -->
+            <article class="cert-card">
+              <div class="cert-preview">
+                <img src="assets/images/certificates/ibm-ai-agent.png" alt="Intelligent by Design: Build an AI Agent - IBM SkillsBuild" class="previewable-img" data-preview-img="assets/images/certificates/ibm-ai-agent.png" data-caption="IBM SkillsBuild: Intelligent by Design - Build an AI Agent (Completion Certificate)" loading="lazy">
+                <span class="cert-zoom-hint">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  <span data-i18n="certPreviewHint">Preview Certificate</span>
+                </span>
+              </div>
+              <div class="cert-body">
+                <div class="cert-meta-row">
+                  <span class="badge-pill" style="background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe;">IBM SkillsBuild</span>
+                  <span class="cert-date">Completed Oct 14, 2026</span>
+                </div>
+                <h4 class="cert-title" data-i18n="cert2Title">Intelligent by Design: Build an AI Agent</h4>
+                <p class="cert-desc" data-i18n="cert2Desc">
+                  A completion certificate from IBM SkillsBuild focusing on the practical design and engineering of AI Agents. Validates competencies in core AI principles, agentic workflows, and the architectural foundations required to build intelligent, task-oriented systems.
+                </p>
+                <div class="cert-tags">
+                  <span class="tech-tag">AI Agents</span>
+                  <span class="tech-tag">Agentic Architecture</span>
+                  <span class="tech-tag">Task Automation</span>
+                  <span class="tech-tag">IBM Credential</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Cert 3: ServiceNow - Micro-Certification - Agentic AI Executive -->
+            <article class="cert-card">
+              <div class="cert-preview">
+                <img src="assets/images/certificates/servicenow-agentic-ai.png" alt="Micro-Certification - Agentic AI Executive - ServiceNow" class="previewable-img" data-preview-img="assets/images/certificates/servicenow-agentic-ai.png" data-caption="ServiceNow: Micro-Certification - Agentic AI Executive" loading="lazy">
+                <span class="cert-zoom-hint">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  <span data-i18n="certPreviewHint">Preview Certificate</span>
+                </span>
+              </div>
+              <div class="cert-body">
+                <div class="cert-meta-row">
+                  <span class="badge-pill" style="background: #f0fdf4; color: #15803d; border-color: #bbf7d0;">ServiceNow</span>
+                  <span class="cert-date">Issued Oct 12, 2026</span>
+                </div>
+                <h4 class="cert-title" data-i18n="cert3Title">Micro-Certification - Agentic AI Executive</h4>
+                <p class="cert-desc" data-i18n="cert3Desc">
+                  A certification from ServiceNow validating strategic understanding of Agentic AI implementation, focusing on leveraging AI to transform and automate enterprise workflows and business operational processes.
+                </p>
+                <div class="cert-tags">
+                  <span class="tech-tag">Agentic AI Executive</span>
+                  <span class="tech-tag">Enterprise Workflows</span>
+                  <span class="tech-tag">ServiceNow</span>
+                  <span class="tech-tag">Process Automation</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Cert 4: Dicoding - Belajar Dasar Cloud dan Gen AI di AWS -->
+            <article class="cert-card">
+              <div class="cert-preview">
+                <img src="assets/images/certificates/dicoding-aws-genai.png" alt="Belajar Dasar Cloud dan Gen AI di AWS - Dicoding Indonesia" class="previewable-img" data-preview-img="assets/images/certificates/dicoding-aws-genai.png" data-caption="Dicoding Academy: Belajar Dasar Cloud dan Gen AI di AWS (Certificate ID: 81P2K7E2OXOY)" loading="lazy">
+                <span class="cert-zoom-hint">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  <span data-i18n="certPreviewHint">Preview Certificate</span>
+                </span>
+              </div>
+              <div class="cert-body">
+                <div class="cert-meta-row">
+                  <span class="badge-pill" style="background: #f0fdfa; color: #0f766e; border-color: #99f6e4;">Dicoding Academy</span>
+                  <span class="cert-date">Issued Sep 24, 2026</span>
+                </div>
+                <h4 class="cert-title" data-i18n="cert4Title">Belajar Dasar Cloud dan Gen AI di AWS</h4>
+                <p class="cert-desc" data-i18n="cert4Desc">
+                  A competency certificate from Dicoding Academy verifying foundational knowledge in AWS Cloud architecture, cloud computing paradigms, and practical implementation of Generative AI services on Amazon Web Services.
+                </p>
+                <div class="cert-tags">
+                  <span class="tech-tag">AWS Cloud</span>
+                  <span class="tech-tag">Cloud Infrastructure</span>
+                  <span class="tech-tag">Generative AI</span>
+                  <span class="tech-tag">ID: 81P2K7E2OXOY</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Cert 5: Dicoding - Spec-Driven Development dengan Kiro -->
+            <article class="cert-card">
+              <div class="cert-preview">
+                <img src="assets/images/certificates/dicoding-sdd-kiro.png" alt="Spec-Driven Development dengan Kiro - Dicoding Indonesia" class="previewable-img" data-preview-img="assets/images/certificates/dicoding-sdd-kiro.png" data-caption="Dicoding Academy: Spec-Driven Development dengan Kiro (Certificate ID: 53XEM46M0PRN)" loading="lazy">
+                <span class="cert-zoom-hint">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  <span data-i18n="certPreviewHint">Preview Certificate</span>
+                </span>
+              </div>
+              <div class="cert-body">
+                <div class="cert-meta-row">
+                  <span class="badge-pill" style="background: #faf5ff; color: #7e22ce; border-color: #e9d5ff;">Dicoding Academy</span>
+                  <span class="cert-date">Issued Sep 24, 2026</span>
+                </div>
+                <h4 class="cert-title" data-i18n="cert5Title">Spec-Driven Development dengan Kiro</h4>
+                <p class="cert-desc" data-i18n="cert5Desc">
+                  A software engineering certification from Dicoding Academy validating skills in Spec-Driven Development (SDD), structuring technical specifications, and leveraging AI-powered development workflows with Kiro to accelerate production software delivery.
+                </p>
+                <div class="cert-tags">
+                  <span class="tech-tag">Spec-Driven Dev</span>
+                  <span class="tech-tag">Kiro AI</span>
+                  <span class="tech-tag">Software Specs</span>
+                  <span class="tech-tag">ID: 53XEM46M0PRN</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       7. CONTACT CTA SECTION
+       ====================================================================== -->
+  <section id="contact" class="py-section bg-subtle">
+    <div class="container text-center" style="max-width: 44rem;">
+      <span class="section-eyebrow" data-i18n="contactEyebrow">GET IN TOUCH</span>
+      <h2 class="section-title" data-i18n="contactTitle">Let&apos;s Build Something Exceptional Together</h2>
+      <p class="section-desc" style="margin-bottom: 2rem;" data-i18n="contactDesc">
+        Whether you are looking for a dedicated Backend Engineer for high-throughput Golang microservices, full-stack software development, or integrating AI/NLP pipelines, my inbox is always open.
+      </p>
+
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+        <a href="mailto:rizkynaupal87@gmail.com" class="btn btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+          <span data-i18n="sendEmailBtn">Send Email (rizkynaupal87@gmail.com)</span>
+        </a>
+        <a href="https://wa.me/6281295967609" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"
+          style="border-color: #86efac; color: #15803d;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <span data-i18n="whatsappBtn">WhatsApp Me</span>
+        </a>
+        <a href="https://www.linkedin.com/in/rizky-noufal-hidayat-8367862a8" target="_blank" rel="noopener noreferrer"
+          class="btn btn-secondary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0e7490" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect width="4" height="12" x="2" y="9" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+          <span data-i18n="linkedinBtn">Connect on LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       8. FOOTER
+       ====================================================================== -->
+  <footer class="footer" style="padding: 1.75rem 0;">
+    <div class="container">
+      <div class="footer-bottom"
+        style="padding-top: 0; border-top: none; padding-right: 5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <p style="margin: 0;" data-i18n="footerCopyright">&copy; 2026 Rizky Noufal Hidayat. Built with Semantic HTML, Vanilla CSS &amp; JS.</p>
+        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+          <div
+            style="display: flex; align-items: center; gap: 0.4rem; font-weight: 600; font-size: 0.75rem; color: #0f766e;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #0d9488;"></span>
+            <span data-i18n="footerStatus">Available for Opportunities</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
