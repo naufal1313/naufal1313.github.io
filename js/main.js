@@ -271,8 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
         highlighted: '  <span class="token-key">Name</span>   <span class="token-kw">string</span>'
       },
       {
-        plain: '  Role   string',
-        highlighted: '  <span class="token-key">Role</span>   <span class="token-kw">string</span>'
+        plain: '  Roles  []string',
+        highlighted: '  <span class="token-key">Roles</span>  []<span class="token-kw">string</span>'
       },
       {
         plain: '  Skills []string',
@@ -295,8 +295,24 @@ document.addEventListener('DOMContentLoaded', () => {
         highlighted: '  <span class="token-key">Name</span>:   <span class="token-str">\'Rizky Noufal Hidayat\'</span>,'
       },
       {
-        plain: "  Role:   'Junior Backend Developer',",
-        highlighted: '  <span class="token-key">Role</span>:   <span class="token-str">\'Junior Backend Developer\'</span>,'
+        plain: '  Roles: []string{',
+        highlighted: '  <span class="token-key">Roles</span>: []<span class="token-kw">string</span>{'
+      },
+      {
+        plain: "    'Junior Backend Developer',",
+        highlighted: '    <span class="token-str">\'Junior Backend Developer\'</span>,'
+      },
+      {
+        plain: "    'Junior Software Engineer',",
+        highlighted: '    <span class="token-str">\'Junior Software Engineer\'</span>,'
+      },
+      {
+        plain: "    'AI Engineer',",
+        highlighted: '    <span class="token-str">\'AI Engineer\'</span>,'
+      },
+      {
+        plain: '  },',
+        highlighted: '  },'
       },
       {
         plain: "  Skills: []string{'Golang', 'PostgreSQL', 'APIs'},",

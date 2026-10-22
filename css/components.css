@@ -442,7 +442,7 @@
 }
 
 .code-editor {
-  min-height: 380px;
+  min-height: 440px;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-light);
   background-color: #f8fafc;
@@ -1356,7 +1356,7 @@
   .code-editor {
     max-width: 100% !important;
     overflow-x: auto !important;
-    min-height: 320px !important;
+    min-height: 385px !important;
     padding: 0.6rem 0.5rem !important;
     font-size: 0.6875rem !important;
     line-height: 1.55;
