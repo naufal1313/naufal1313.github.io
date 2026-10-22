@@ -327,11 +327,13 @@
   color: var(--brand-teal-dark);
   line-height: 1.35;
   margin-bottom: 0.65rem;
+  min-height: 4.25rem; /* Reserves space for multi-line wrap on mobile to prevent jitter */
 }
 
 @media (min-width: 640px) {
   .hero-subtitle {
     font-size: 1.15rem;
+    min-height: 2.2rem; /* Clean baseline on tablet/desktop */
   }
 }
 
@@ -426,6 +428,7 @@
 }
 
 .code-editor {
+  min-height: 380px;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-light);
   background-color: #f8fafc;
@@ -1316,6 +1319,11 @@
     box-sizing: border-box !important;
   }
 
+  /* Hero Locked Heights to prevent mobile layout jitter */
+  .hero-subtitle {
+    min-height: 4.25rem !important;
+  }
+
   /* Hero Code Card */
   .code-card {
     padding: 0.625rem 0.5rem !important;
@@ -1323,6 +1331,7 @@
   }
 
   .code-editor {
+    min-height: 320px !important;
     padding: 0.6rem 0.5rem !important;
     font-size: 0.6875rem !important;
     line-height: 1.55;

@@ -337,8 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const prepareNextLine = () => {
       if (lineIndex >= codeData.length) {
-        // Typing complete! Keep blinking cursor visible for 7 seconds, then restart cycle
-        setTimeout(startTyping, 7000);
+        // Typing complete: keep the blinking cursor active at the end of the script
         return;
       }
 
