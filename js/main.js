@@ -393,24 +393,35 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 9. SIDE PROJECTS COLLAPSIBLE TOGGLE
+  // 9. COLLAPSIBLE TOGGLES (Side Projects, Skills, Certifications)
   // --------------------------------------------------------------------------
-  const toggleSideBtn = document.getElementById('toggle-side-projects-btn');
-  const sidePanel = document.getElementById('side-projects-panel');
-  if (toggleSideBtn && sidePanel) {
-    toggleSideBtn.addEventListener('click', () => {
-      const isOpen = sidePanel.classList.toggle('open');
-      const textSpan = toggleSideBtn.querySelector('span');
-      if (textSpan) {
-        textSpan.textContent = isOpen ? 'Hide Side Projects' : 'View More Projects (2 Side Projects)';
-      }
-      const chevron = toggleSideBtn.querySelector('.toggle-chevron');
+  const setupCollapsible = (btnId, panelId, openKey, closedKey, fallbackOpen, fallbackClosed) => {
+    const btn = document.getElementById(btnId);
+    const panel = document.getElementById(panelId);
+    if (!btn || !panel) return;
+
+    btn.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('open');
+      panel.style.display = isOpen ? (panelId === 'side-projects-panel' ? 'grid' : 'block') : 'none';
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+      const chevron = btn.querySelector('.toggle-chevron');
       if (chevron) {
         chevron.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
       }
-      toggleSideBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+      const currentLang = localStorage.getItem('portfolio_lang') || 'en';
+      const t = translations[currentLang] || translations.en;
+      const textSpan = btn.querySelector('.toggle-text') || btn.querySelector('span');
+      if (textSpan) {
+        textSpan.textContent = isOpen ? (t[openKey] || fallbackOpen) : (t[closedKey] || fallbackClosed);
+      }
     });
-  }
+  };
+
+  setupCollapsible('toggle-side-projects-btn', 'side-projects-panel', 'hideSideProjects', 'viewMoreSideProjects', 'Hide Side Projects', 'View More Projects (2 Side Projects)');
+  setupCollapsible('toggle-more-skills-btn', 'more-skills-panel', 'hideSkills', 'viewMoreSkills', 'Hide Extra Skills', 'View More Skills (4 More)');
+  setupCollapsible('toggle-more-certs-btn', 'more-certs-panel', 'hideCerts', 'viewMoreCerts', 'Hide Extra Certifications', 'View More Certifications (2 More)');
 
   // --------------------------------------------------------------------------
   // 10. IN-PAGE SMOOTH SCROLLING (HOME LINKS)
@@ -536,6 +547,7 @@ document.addEventListener('DOMContentLoaded', () => {
       projJudolDesc: 'Sistem moderasi cerdas pendeteksi komentar spam promosi judi online di YouTube menggunakan Hybrid AI (Bi-LSTM & Aturan Heuristik).',
       projJudolContrib: 'Membangun API inferensi Python Flask, merekayasa penarikan data YouTube API v3, dan mengintegrasikan interpretabilitas LIME XAI.',
       viewMoreSideProjects: 'Lihat Proyek Tambahan (2 Side Projects)',
+      hideSideProjects: 'Sembunyikan Proyek Tambahan',
       sideProjectBadge: 'Side Project',
       sideBangunDesc: 'Aplikasi mobile pencatatan arus kas dan manajemen inventaris bahan bangunan untuk kontraktor konstruksi dan toko bangunan UMKM.',
       sideRentalDesc: 'Platform pemesanan dan manajemen armada rental mobil dengan kalkulasi durasi otomatis, validasi ketersediaan kendaraan, dan pencetakan faktur PDF.',
@@ -544,6 +556,8 @@ document.addEventListener('DOMContentLoaded', () => {
       skillsEyebrow: 'KAPABILITAS TEKNIS',
       skillsTitle: 'Engineering Skill Matrix',
       skillsDesc: 'Struktur keahlian teknis terstandar yang digunakan dalam perancangan microservices, basis data, pipeline CI/CD, dan model AI.',
+      viewMoreSkills: 'Tampilkan Keahlian Lainnya (4 Lagi)',
+      hideSkills: 'Sembunyikan Keahlian Tambahan',
       skill1Title: 'Rekayasa Backend & API',
       skill1Badge: 'Spesialisasi Utama • Standar Produksi',
       skill1Desc: 'Layanan backend berkinerja tinggi dan arsitektur modular di Go dengan clean onion architecture, konkurensi goroutine, worker pool, dan penanganan error sentinel yang terprediksi.',
@@ -584,6 +598,8 @@ document.addEventListener('DOMContentLoaded', () => {
       certEyebrow: 'SERTIFIKASI PROFESIONAL',
       certSectionTitle: 'Kredensial Terverifikasi & Kompetensi Spesialis',
       certSectionDesc: 'Kredensial yang diakui industri dalam keamanan ofensif AI, arsitektur sistem agentic, fondasi cloud AWS, dan rekayasa berbasis spesifikasi. Klik sertifikat untuk melihat verifikasi resolusi tinggi.',
+      viewMoreCerts: 'Tampilkan Sertifikat Lainnya (2 Lagi)',
+      hideCerts: 'Sembunyikan Sertifikat Tambahan',
       certPreviewHint: 'Pratinjau Sertifikat',
       cert1Title: 'Introduction to Offensive Security with Artificial Intelligence',
       cert1Desc: 'Sertifikat penyelesaian yang memvalidasi pengetahuan fundamental pada irisan keamanan siber dan kecerdasan buatan. Materi mencakup prinsip dan aplikasi praktis pemanfaatan teknologi AI dalam operasi keamanan ofensif dan red teaming.',
@@ -689,6 +705,7 @@ document.addEventListener('DOMContentLoaded', () => {
       projJudolDesc: 'AI-powered moderation system detecting online gambling spam comments on YouTube using Hybrid AI (Bi-LSTM & Rules).',
       projJudolContrib: 'Built Python Flask inference API, engineered YouTube Data API v3 ingestion, and integrated LIME XAI for transparent spam scoring.',
       viewMoreSideProjects: 'View More Projects (2 Side Projects)',
+      hideSideProjects: 'Hide Side Projects',
       sideProjectBadge: 'Side Project',
       sideBangunDesc: 'Mobile cashflow ledger and material inventory management application built for construction contractors and building supply small businesses.',
       sideRentalDesc: 'Car rental fleet management and booking platform featuring automated duration calculations, vehicle availability checks, and PDF invoice generation.',
@@ -697,6 +714,8 @@ document.addEventListener('DOMContentLoaded', () => {
       skillsEyebrow: 'TECHNICAL CAPABILITIES',
       skillsTitle: 'Engineering Skill Matrix',
       skillsDesc: 'Structured toolsets and frameworks used across production microservices, data architecture, and continuous deployment workflows.',
+      viewMoreSkills: 'View More Skills (4 More)',
+      hideSkills: 'Hide Extra Skills',
       skill1Title: 'Backend & API Engineering',
       skill1Badge: 'Core Specialization • Production Grade',
       skill1Desc: 'High-throughput backend services and modular monoliths in Go with clean onion architecture, goroutine concurrency, worker pools, and predictable sentinel error handling.',
@@ -737,6 +756,8 @@ document.addEventListener('DOMContentLoaded', () => {
       certEyebrow: 'PROFESSIONAL CERTIFICATIONS',
       certSectionTitle: 'Verified Credentials & Specialized Competencies',
       certSectionDesc: 'Industry-recognized credentials in offensive AI security, agentic system architecture, AWS cloud foundation, and spec-driven engineering. Click on any certificate to view high-resolution verification.',
+      viewMoreCerts: 'View More Certifications (2 More)',
+      hideCerts: 'Hide Extra Certifications',
       certPreviewHint: 'Preview Certificate',
       cert1Title: 'Introduction to Offensive Security with Artificial Intelligence',
       cert1Desc: 'A completion certificate validating foundational knowledge at the intersection of cybersecurity and artificial intelligence. This course covers the principles and practical applications of leveraging AI technologies within offensive security and red teaming operations.',

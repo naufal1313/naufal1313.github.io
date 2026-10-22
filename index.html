@@ -23,7 +23,6 @@
         <img src="assets/images/profile.jpg" alt="Rizky Noufal Hidayat" class="brand-avatar-img">
         <div class="brand-avatar-text">
           <span class="brand-avatar-name">Rizky Noufal Hidayat</span>
-          <span class="brand-avatar-role">Junior Backend Developer</span>
         </div>
       </a>
 
@@ -185,7 +184,7 @@
       </div>
 
       <!-- Right: developer.ts Live Code Card -->
-      <div>
+      <div class="hero-code-col">
         <div class="code-card">
           <div class="window-header">
             <div class="window-dots">
@@ -958,131 +957,154 @@
             <span class="tech-tag">Checkmarx</span>
           </div>
         </div>
+      </div>
 
-        <!-- 4. Testing & Code Quality -->
-        <div class="skill-card">
-          <div class="skill-card-header">
-            <div class="skill-icon-wrap">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="9 11 12 14 22 4" />
-                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-              </svg>
+      <!-- Collapsible Panel for 4 Remaining Skills -->
+      <div style="text-align: center; margin-top: 1.5rem;">
+        <button id="toggle-more-skills-btn" class="toggle-side-btn" aria-expanded="false"
+          aria-controls="more-skills-panel">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect width="7" height="7" x="3" y="3" rx="1" />
+            <rect width="7" height="7" x="14" y="3" rx="1" />
+            <rect width="7" height="7" x="14" y="14" rx="1" />
+            <rect width="7" height="7" x="3" y="14" rx="1" />
+          </svg>
+          <span class="toggle-text" data-i18n="viewMoreSkills">View More Skills (4 More)</span>
+          <svg class="toggle-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+
+        <div id="more-skills-panel" class="collapsible-panel" style="display: none; margin-top: 1.5rem;">
+          <div class="skill-matrix-grid">
+            <!-- 4. Testing & Code Quality -->
+            <div class="skill-card">
+              <div class="skill-card-header">
+                <div class="skill-icon-wrap">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                </div>
+                <h3 class="skill-card-title" data-i18n="skill4Title">Testing &amp; Code Quality</h3>
+              </div>
+
+              <p class="skill-card-desc" data-i18n="skill4Desc">
+                Automated regression prevention through isolated mocks, test assertions, and static code quality gates.
+              </p>
+
+              <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                <span class="tech-tag">Go Testing Package</span>
+                <span class="tech-tag">Testify Assertion</span>
+                <span class="tech-tag">pgxmock</span>
+                <span class="tech-tag">httptest</span>
+                <span class="tech-tag">Unit &amp; Integration Testing</span>
+                <span class="tech-tag">Mock Repository Pattern</span>
+                <span class="tech-tag">Test Coverage Analysis</span>
+                <span class="tech-tag">SonarQube &amp; Checkmarx Integration</span>
+              </div>
             </div>
-            <h3 class="skill-card-title" data-i18n="skill4Title">Testing &amp; Code Quality</h3>
-          </div>
 
-          <p class="skill-card-desc" data-i18n="skill4Desc">
-            Automated regression prevention through isolated mocks, test assertions, and static code quality gates.
-          </p>
+            <!-- 5. DevOps & Observability -->
+            <div class="skill-card">
+              <div class="skill-card-header">
+                <div class="skill-icon-wrap">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="m16.5 9.4-9-5.19M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                    <line x1="12" y1="22.08" x2="12" y2="12" />
+                  </svg>
+                </div>
+                <h3 class="skill-card-title" data-i18n="skill5Title">DevOps &amp; Observability</h3>
+              </div>
 
-          <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
-            <span class="tech-tag">Go Testing Package</span>
-            <span class="tech-tag">Testify Assertion</span>
-            <span class="tech-tag">pgxmock</span>
-            <span class="tech-tag">httptest</span>
-            <span class="tech-tag">Unit &amp; Integration Testing</span>
-            <span class="tech-tag">Mock Repository Pattern</span>
-            <span class="tech-tag">Test Coverage Analysis</span>
-            <span class="tech-tag">SonarQube &amp; Checkmarx Integration</span>
-          </div>
-        </div>
+              <p class="skill-card-desc" data-i18n="skill5Desc">
+                Containerization, CI/CD runners, distributed tracing telemetry, and stress benchmarking.
+              </p>
 
-        <!-- 5. DevOps & Observability -->
-        <div class="skill-card">
-          <div class="skill-card-header">
-            <div class="skill-icon-wrap">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="m16.5 9.4-9-5.19M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                <line x1="12" y1="22.08" x2="12" y2="12" />
-              </svg>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                <span class="tech-tag">Docker &amp; Containerization</span>
+                <span class="tech-tag">Git &amp; GitHub / Bitbucket</span>
+                <span class="tech-tag">Linux / Bash Shell</span>
+                <span class="tech-tag">OpenTelemetry (Traces &amp; Metrics)</span>
+                <span class="tech-tag">Distributed Tracing (Jaeger)</span>
+                <span class="tech-tag">Grafana &amp; Prometheus</span>
+                <span class="tech-tag">k6 Load Testing</span>
+                <span class="tech-tag">CI/CD Pipelines</span>
+                <span class="tech-tag">MinIO / S3 Storage</span>
+              </div>
             </div>
-            <h3 class="skill-card-title" data-i18n="skill5Title">DevOps &amp; Observability</h3>
-          </div>
 
-          <p class="skill-card-desc" data-i18n="skill5Desc">
-            Containerization, CI/CD runners, distributed tracing telemetry, and stress benchmarking.
-          </p>
+            <!-- 6. AI, Machine Learning & Data Integration -->
+            <div class="skill-card">
+              <div class="skill-card-header">
+                <div class="skill-icon-wrap">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="18" height="18" x="3" y="3" rx="2" />
+                    <path d="M15 9h.01" />
+                    <path d="M9 9h.01" />
+                    <path d="M9 15h6" />
+                  </svg>
+                </div>
+                <h3 class="skill-card-title" data-i18n="skill6Title">AI, ML &amp; Data Integration</h3>
+              </div>
 
-          <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
-            <span class="tech-tag">Docker &amp; Containerization</span>
-            <span class="tech-tag">Git &amp; GitHub / Bitbucket</span>
-            <span class="tech-tag">Linux / Bash Shell</span>
-            <span class="tech-tag">OpenTelemetry (Traces &amp; Metrics)</span>
-            <span class="tech-tag">Distributed Tracing (Jaeger)</span>
-            <span class="tech-tag">Grafana &amp; Prometheus</span>
-            <span class="tech-tag">k6 Load Testing</span>
-            <span class="tech-tag">CI/CD Pipelines</span>
-            <span class="tech-tag">MinIO / S3 Storage</span>
-          </div>
-        </div>
+              <p class="skill-card-desc" data-i18n="skill6Desc">
+                Machine learning pipelines, text classification, and explainable AI interpretability (applied in JudolScan).
+              </p>
 
-        <!-- 6. AI, Machine Learning & Data Integration -->
-        <div class="skill-card">
-          <div class="skill-card-header">
-            <div class="skill-icon-wrap">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect width="18" height="18" x="3" y="3" rx="2" />
-                <path d="M15 9h.01" />
-                <path d="M9 9h.01" />
-                <path d="M9 15h6" />
-              </svg>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">TensorFlow / Keras</span>
+                <span class="tech-tag">Bi-LSTM (Bidirectional LSTM)</span>
+                <span class="tech-tag">Natural Language Processing (NLP)</span>
+                <span class="tech-tag">Text Classification Pipeline</span>
+                <span class="tech-tag">LIME XAI Interpretability</span>
+                <span class="tech-tag">YouTube Data API v3</span>
+                <span class="tech-tag">IndoBERT (Exploration)</span>
+              </div>
             </div>
-            <h3 class="skill-card-title" data-i18n="skill6Title">AI, ML &amp; Data Integration</h3>
-          </div>
 
-          <p class="skill-card-desc" data-i18n="skill6Desc">
-            Machine learning pipelines, text classification, and explainable AI interpretability (applied in JudolScan).
-          </p>
+            <!-- 7. Frontend & Developer Tools -->
+            <div class="skill-card">
+              <div class="skill-card-header">
+                <div class="skill-icon-wrap">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="18" height="18" x="3" y="3" rx="2" />
+                    <path d="M3 9h18" />
+                    <path d="M9 21V9" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="skill-card-title" data-i18n="skill7Title">Frontend &amp; Developer Tools</h3>
+                  <span class="skill-sub-badge" data-i18n="skill7Badge">Supporting Stack • Cross-Functional</span>
+                </div>
+              </div>
 
-          <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Flask</span>
-            <span class="tech-tag">TensorFlow / Keras</span>
-            <span class="tech-tag">Bi-LSTM (Bidirectional LSTM)</span>
-            <span class="tech-tag">Natural Language Processing (NLP)</span>
-            <span class="tech-tag">Text Classification Pipeline</span>
-            <span class="tech-tag">LIME XAI Interpretability</span>
-            <span class="tech-tag">YouTube Data API v3</span>
-            <span class="tech-tag">IndoBERT (Exploration)</span>
-          </div>
-        </div>
+              <p class="skill-card-desc" data-i18n="skill7Desc">
+                Modern frontend interfaces, API testing utilities, and structured development environments for end-to-end
+                integration.
+              </p>
 
-        <!-- 7. Frontend & Developer Tools -->
-        <div class="skill-card">
-          <div class="skill-card-header">
-            <div class="skill-icon-wrap">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect width="18" height="18" x="3" y="3" rx="2" />
-                <path d="M3 9h18" />
-                <path d="M9 21V9" />
-              </svg>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">Semantic HTML &amp; CSS</span>
+                <span class="tech-tag">Insomnia</span>
+                <span class="tech-tag">VS Code / Antigravity</span>
+                <span class="tech-tag">Git Workflow</span>
+              </div>
             </div>
-            <div>
-              <h3 class="skill-card-title" data-i18n="skill7Title">Frontend &amp; Developer Tools</h3>
-              <span class="skill-sub-badge" data-i18n="skill7Badge">Supporting Stack • Cross-Functional</span>
-            </div>
-          </div>
-
-          <p class="skill-card-desc" data-i18n="skill7Desc">
-            Modern frontend interfaces, API testing utilities, and structured development environments for end-to-end
-            integration.
-          </p>
-
-          <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">Next.js</span>
-            <span class="tech-tag">Tailwind CSS</span>
-            <span class="tech-tag">Semantic HTML &amp; CSS</span>
-            <span class="tech-tag">Insomnia</span>
-            <span class="tech-tag">VS Code / Antigravity</span>
-            <span class="tech-tag">Git Workflow</span>
           </div>
         </div>
       </div>
@@ -1291,86 +1313,108 @@
                 </div>
               </div>
             </article>
+          </div>
 
-            <!-- Cert 4: Dicoding - Belajar Dasar Cloud dan Gen AI di AWS -->
-            <article class="cert-card">
-              <div class="cert-preview">
-                <img src="assets/images/certificates/dicoding-aws-genai.png"
-                  alt="Belajar Dasar Cloud dan Gen AI di AWS - Dicoding Indonesia" class="previewable-img"
-                  data-preview-img="assets/images/certificates/dicoding-aws-genai.png"
-                  data-caption="Dicoding Academy: Belajar Dasar Cloud dan Gen AI di AWS (Certificate ID: 81P2K7E2OXOY)"
-                  loading="lazy">
-                <span class="cert-zoom-hint">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8" />
-                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                    <line x1="11" y1="8" x2="11" y2="14" />
-                    <line x1="8" y1="11" x2="14" y2="11" />
-                  </svg>
-                  <span data-i18n="certPreviewHint">Preview Certificate</span>
-                </span>
-              </div>
-              <div class="cert-body">
-                <div class="cert-meta-row">
-                  <span class="badge-pill" style="background: #f0fdfa; color: #0f766e; border-color: #99f6e4;">Dicoding
-                    Academy</span>
-                  <span class="cert-date">Issued Sep 24, 2026</span>
-                </div>
-                <h4 class="cert-title" data-i18n="cert4Title">Belajar Dasar Cloud dan Gen AI di AWS</h4>
-                <p class="cert-desc" data-i18n="cert4Desc">
-                  A competency certificate from Dicoding Academy verifying foundational knowledge in AWS Cloud
-                  architecture, cloud computing paradigms, and practical implementation of Generative AI services on
-                  Amazon Web Services.
-                </p>
-                <div class="cert-tags">
-                  <span class="tech-tag">AWS Cloud</span>
-                  <span class="tech-tag">Cloud Infrastructure</span>
-                  <span class="tech-tag">Generative AI</span>
-                  <span class="tech-tag">ID: 81P2K7E2OXOY</span>
-                </div>
-              </div>
-            </article>
+          <!-- Collapsible Panel for 2 Remaining Certifications -->
+          <div style="text-align: center; margin-top: 1.5rem;">
+            <button id="toggle-more-certs-btn" class="toggle-side-btn" aria-expanded="false"
+              aria-controls="more-certs-panel">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6" />
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+              </svg>
+              <span class="toggle-text" data-i18n="viewMoreCerts">View More Certifications (2 More)</span>
+              <svg class="toggle-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
 
-            <!-- Cert 5: Dicoding - Spec-Driven Development dengan Kiro -->
-            <article class="cert-card">
-              <div class="cert-preview">
-                <img src="assets/images/certificates/dicoding-sdd-kiro.png"
-                  alt="Spec-Driven Development dengan Kiro - Dicoding Indonesia" class="previewable-img"
-                  data-preview-img="assets/images/certificates/dicoding-sdd-kiro.png"
-                  data-caption="Dicoding Academy: Spec-Driven Development dengan Kiro (Certificate ID: 53XEM46M0PRN)"
-                  loading="lazy">
-                <span class="cert-zoom-hint">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8" />
-                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                    <line x1="11" y1="8" x2="11" y2="14" />
-                    <line x1="8" y1="11" x2="14" y2="11" />
-                  </svg>
-                  <span data-i18n="certPreviewHint">Preview Certificate</span>
-                </span>
+            <div id="more-certs-panel" class="collapsible-panel" style="display: none; margin-top: 1.5rem;">
+              <div class="cert-grid">
+                <!-- Cert 4: Dicoding - Belajar Dasar Cloud dan Gen AI di AWS -->
+                <article class="cert-card">
+                  <div class="cert-preview">
+                    <img src="assets/images/certificates/dicoding-aws-genai.png"
+                      alt="Belajar Dasar Cloud dan Gen AI di AWS - Dicoding Indonesia" class="previewable-img"
+                      data-preview-img="assets/images/certificates/dicoding-aws-genai.png"
+                      data-caption="Dicoding Academy: Belajar Dasar Cloud dan Gen AI di AWS (Certificate ID: 81P2K7E2OXOY)"
+                      loading="lazy">
+                    <span class="cert-zoom-hint">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        <line x1="11" y1="8" x2="11" y2="14" />
+                        <line x1="8" y1="11" x2="14" y2="11" />
+                      </svg>
+                      <span data-i18n="certPreviewHint">Preview Certificate</span>
+                    </span>
+                  </div>
+                  <div class="cert-body">
+                    <div class="cert-meta-row">
+                      <span class="badge-pill" style="background: #f0fdfa; color: #0f766e; border-color: #99f6e4;">Dicoding
+                        Academy</span>
+                      <span class="cert-date">Issued Sep 24, 2026</span>
+                    </div>
+                    <h4 class="cert-title" data-i18n="cert4Title">Belajar Dasar Cloud dan Gen AI di AWS</h4>
+                    <p class="cert-desc" data-i18n="cert4Desc">
+                      A competency certificate from Dicoding Academy verifying foundational knowledge in AWS Cloud
+                      architecture, cloud computing paradigms, and practical implementation of Generative AI services on
+                      Amazon Web Services.
+                    </p>
+                    <div class="cert-tags">
+                      <span class="tech-tag">AWS Cloud</span>
+                      <span class="tech-tag">Cloud Infrastructure</span>
+                      <span class="tech-tag">Generative AI</span>
+                      <span class="tech-tag">ID: 81P2K7E2OXOY</span>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Cert 5: Dicoding - Spec-Driven Development dengan Kiro -->
+                <article class="cert-card">
+                  <div class="cert-preview">
+                    <img src="assets/images/certificates/dicoding-sdd-kiro.png"
+                      alt="Spec-Driven Development dengan Kiro - Dicoding Indonesia" class="previewable-img"
+                      data-preview-img="assets/images/certificates/dicoding-sdd-kiro.png"
+                      data-caption="Dicoding Academy: Spec-Driven Development dengan Kiro (Certificate ID: 53XEM46M0PRN)"
+                      loading="lazy">
+                    <span class="cert-zoom-hint">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        <line x1="11" y1="8" x2="11" y2="14" />
+                        <line x1="8" y1="11" x2="14" y2="11" />
+                      </svg>
+                      <span data-i18n="certPreviewHint">Preview Certificate</span>
+                    </span>
+                  </div>
+                  <div class="cert-body">
+                    <div class="cert-meta-row">
+                      <span class="badge-pill" style="background: #faf5ff; color: #7e22ce; border-color: #e9d5ff;">Dicoding
+                        Academy</span>
+                      <span class="cert-date">Issued Sep 24, 2026</span>
+                    </div>
+                    <h4 class="cert-title" data-i18n="cert5Title">Spec-Driven Development dengan Kiro</h4>
+                    <p class="cert-desc" data-i18n="cert5Desc">
+                      A software engineering certification from Dicoding Academy validating skills in Spec-Driven
+                      Development (SDD), structuring technical specifications, and leveraging AI-powered development
+                      workflows with Kiro to accelerate production software delivery.
+                    </p>
+                    <div class="cert-tags">
+                      <span class="tech-tag">Spec-Driven Dev</span>
+                      <span class="tech-tag">Kiro AI</span>
+                      <span class="tech-tag">Software Specs</span>
+                      <span class="tech-tag">ID: 53XEM46M0PRN</span>
+                    </div>
+                  </div>
+                </article>
               </div>
-              <div class="cert-body">
-                <div class="cert-meta-row">
-                  <span class="badge-pill" style="background: #faf5ff; color: #7e22ce; border-color: #e9d5ff;">Dicoding
-                    Academy</span>
-                  <span class="cert-date">Issued Sep 24, 2026</span>
-                </div>
-                <h4 class="cert-title" data-i18n="cert5Title">Spec-Driven Development dengan Kiro</h4>
-                <p class="cert-desc" data-i18n="cert5Desc">
-                  A software engineering certification from Dicoding Academy validating skills in Spec-Driven
-                  Development (SDD), structuring technical specifications, and leveraging AI-powered development
-                  workflows with Kiro to accelerate production software delivery.
-                </p>
-                <div class="cert-tags">
-                  <span class="tech-tag">Spec-Driven Dev</span>
-                  <span class="tech-tag">Kiro AI</span>
-                  <span class="tech-tag">Software Specs</span>
-                  <span class="tech-tag">ID: 53XEM46M0PRN</span>
-                </div>
-              </div>
-            </article>
+            </div>
+          </div>
           </div>
         </div>
       </div>

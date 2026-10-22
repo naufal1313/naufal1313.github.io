@@ -287,6 +287,17 @@
   align-items: center;
 }
 
+.hero-grid > div {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.hero-code-col {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
 @media (min-width: 1024px) {
   .hero-grid {
     grid-template-columns: 7fr 5fr;
@@ -384,6 +395,9 @@
 
 /* Developer.ts Code Card (White Theme) */
 .code-card {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-light);
   background-color: #ffffff;
@@ -1324,13 +1338,24 @@
     min-height: 4.25rem !important;
   }
 
+  .hero-code-col {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow: hidden;
+  }
+
   /* Hero Code Card */
   .code-card {
+    max-width: 100% !important;
+    overflow: hidden !important;
     padding: 0.625rem 0.5rem !important;
     margin-top: 0.25rem !important;
   }
 
   .code-editor {
+    max-width: 100% !important;
+    overflow-x: auto !important;
     min-height: 320px !important;
     padding: 0.6rem 0.5rem !important;
     font-size: 0.6875rem !important;
@@ -1488,17 +1513,26 @@
   text-align: center;
 }
 
-.side-projects-panel {
+.side-projects-panel,
+.collapsible-panel {
   display: none;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.25rem;
   margin-top: 1.25rem;
   text-align: left;
 }
 
+.side-projects-panel.open,
+.collapsible-panel.open {
+  display: block;
+  animation: fadeInDown 0.35s ease forwards;
+}
+
+.side-projects-panel {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
 .side-projects-panel.open {
   display: grid;
-  animation: fadeInDown 0.35s ease forwards;
 }
 
 @keyframes fadeInDown {
